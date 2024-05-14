@@ -4,8 +4,9 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: black;
+  background-image: url('../assets/imgs/Login.png');
 }
+
 
 :root {
   --tamanho-header: 80px;
@@ -17,37 +18,75 @@ body {
 
 .container {
   display: flex;
-  width: 80%;
-  margin: auto;
+  width: 100%;
+  margin: 0;
+}
+
+.containerIND{
+  display: flex;
+
+}
+
+.containerIND .TextoLogo{
+  display: flex;
+  align-items: center;
+  margin-left: 3%;
+  width: 70%;
+}
+
+.containerIND .logo{
+width: 40%;
+margin-top: 20px;
+font-size: 100px;
+margin-bottom: 0px;
+font-family: league-spartan;
+-webkit-text-fill-color: rgba(255, 255, 255, 0);
+-webkit-text-stroke-width: 3px;
+-webkit-text-stroke-color: rgb(255, 255, 255);
+}
+
+.containerIND .descLogo{
+  display: flex;
+  width: 50%;
+  font-size: 25px;
 }
 
 .header {
-  height: var(--tamanho-header);
-  border-bottom: 2px solid #32b9cd;
+  height: 100%;
+  border-bottom: 10px solid #141D32;
 }
 
 .header .container {
+  display: flex;
   justify-content: space-between;
   align-items: center;
   height: 100%;
+  background-color: #141D32;
+  
 }
 
 .header a {
   text-decoration: none;
-  color: #e3b062;
+  color: #626be3;
+  font: bold;
+  display: flex;
+  font-size: larger;
 }
 
 .agora {
   font-weight: 800;
+
 }
 
 .navbar {
   width: 300px;
   display: flex;
   align-items: center;
+  margin-left: 10%;
   justify-content: space-between;
   list-style: none;
-  color: #e3b062;
+  color: #626be3;
+  margin-right: 10%;
 }
 
 .titulo {
@@ -57,7 +96,7 @@ body {
 }
 
 .header h1 {
-  margin: 0;
+  margin-left: 5%;
 }
 
 /* BANNER */
@@ -65,13 +104,13 @@ body {
 .banner {
   height: var(--tamanho-banner);
   color: white;
-  background-image: url('../assets/imgs/bg-jelly-fish-para-home.png');
   background-size: cover;
+  background-image: url('../assets/imgs/Login.png');
 }
 
 .banner .container {
   justify-content: center;
-  align-items: center;
+  align-items: end;
   height: 100%;
 }
 
@@ -121,7 +160,7 @@ body {
 /* FOOTER */
 
 .footer {
-  background-color: #32b9cd;
+  background-color: #141D32;
   height: 150px;
   color: #fff;
   display: flex;
@@ -141,31 +180,34 @@ body {
 
 .login {
   height: var(--tamanho-login);
-  background-image: url('../assets/imgs/bg-jelly-fish-para-home.png');
+  background-image: url('../assets/imgs/Login.png');
   background-size: cover;
+  position: relative;
 }
 
 .login .container {
   justify-content: center;
   align-items: center;
   height: 100%;
+  position: absolute;
 }
 
 .card {
-  width: 50%;
-  background-color: #e5e5e5;
+  width: 27%;
+  background-color:#121D39;
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  color: palevioletred;
+  color: white;
   flex-direction: column;
   height: fit-content;
-  padding: 20px 0;
+  padding: 50px 0;
+  
 }
 
 .card h2 {
-  margin: 0;
+  margin-top: 10;
   font-size: 30px;
 }
 
@@ -183,19 +225,20 @@ body {
 }
 
 .formulario input {
-  border: 2px solid #32b9cd;
+  border: 2px solid #454A57;
   text-align: center;
-  border-radius: 10px;
-  margin: 0;
+  border-radius: 50px;
+  margin-top: 5px;
+  background-color: #454A57;
 }
 
 .formulario select {
   border: 2px solid #32b9cd;
-  background-color: white;
+  background-color: #882D86;
   color: gray;
   height: 36px;
   text-align: center;
-  border-radius: 10px;
+  border-radius: 15px;
   margin: 0;
 }
 
@@ -210,15 +253,15 @@ body {
   cursor: pointer;
   font-family: "Barlow", sans-serif;
   border: 0;
-  border-radius: 5px;
+  border-radius: 50px;
   font-weight: 600;
   font-size: 18px;
   color: #fff;
-  background-color: #e6005a;
+  background-color: #5692D6;
   width: 120px;
-  height: 30px;
+  height: 50px;
   align-self: center;
-  margin-top: 20px;
+  margin-top: 39px;
 }
 
 .loading-div {
@@ -234,6 +277,105 @@ body {
 #div_erros_login {
   display: none
 }
+
+/*  CADASTRO  */
+
+.cadastro {
+  height: 10%;
+  background-image: url('../assets/imgs/Login.png');
+  background-size: cover;
+  position: relative;
+}
+
+.cadastro .container {
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 0;
+}
+
+.card {
+  width: 27%;
+  background-color:#121D39;
+  display: flex;
+  align-items: center;
+  color: white;
+  flex-direction: column;
+  margin: 1%;
+  padding-top: 0%;
+}
+
+.card h2 {
+  margin-top: 5;
+  font-size: 30px;
+}
+
+.formulario {
+  display: flex;
+  width: 80%;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.formulario span {
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.formulario input {
+  border: 2px solid #454A57;
+  text-align: center;
+  border-radius: 50px;
+  margin-top: 0px;
+  background-color: #454A57;
+}
+
+.formulario select {
+  border: 2px solid #2f4d52;
+  background-color: #454A57;
+  color: gray;
+  height: 36px;
+  text-align: center;
+  border-radius: 0px;
+  margin: 0;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  padding: 3px 0;
+}
+
+.botao {
+  cursor: pointer;
+  font-family: "Barlow", sans-serif;
+  border: 0;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 18px;
+  color: #fff;
+  background-color: #5692D6;
+  width: 120px;
+  height: 50px;
+  align-self: center;
+  margin-top: 39px;
+}
+
+.loading-div {
+  width: 50px;
+  display: none;
+}
+
+.loading-div img {
+  height: 50px;
+  width: 50px;
+}
+
+#div_erros_login {
+  display: none
+}
+
 
 /* FORMULARIO */
 
