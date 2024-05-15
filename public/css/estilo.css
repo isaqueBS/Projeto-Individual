@@ -30,25 +30,30 @@ body {
 .containerIND .TextoLogo{
   display: flex;
   align-items: center;
-  margin-left: 3%;
-  width: 70%;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 0;
+  width: 100%;
 }
 
 .containerIND .logo{
 width: 40%;
-margin-top: 20px;
+margin: 100px 0 0 -100px ;
 font-size: 100px;
-margin-bottom: 0px;
 font-family: league-spartan;
 -webkit-text-fill-color: rgba(255, 255, 255, 0);
--webkit-text-stroke-width: 3px;
+-webkit-text-stroke-width: 2px;
 -webkit-text-stroke-color: rgb(255, 255, 255);
+align-items: center;
+justify-content: center;
+flex-direction: column;
 }
 
 .containerIND .descLogo{
   display: flex;
   width: 50%;
   font-size: 25px;
+  margin: 50px 0 0 0;
 }
 
 .header {
