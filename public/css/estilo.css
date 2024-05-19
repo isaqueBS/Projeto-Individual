@@ -4,14 +4,12 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-image: url('../assets/imgs/Login.png');
 }
 
 
 :root {
   --tamanho-header: 80px;
   --tamanho-banner: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
-  --tamanho-simulador: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
   --tamanho-login: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
   --tamanho-footer: 65px;
 }
@@ -41,9 +39,9 @@ width: 40%;
 margin: 100px 0 0 -100px ;
 font-size: 100px;
 font-family: league-spartan;
--webkit-text-fill-color: rgba(255, 255, 255, 0);
--webkit-text-stroke-width: 2px;
--webkit-text-stroke-color: rgb(255, 255, 255);
+-webkit-text-fill-color: rgba(230, 8, 8, 0);
+-webkit-text-stroke-width: 3px;
+-webkit-text-stroke-color: rgb(163, 29, 29);
 align-items: center;
 justify-content: center;
 flex-direction: column;
@@ -58,7 +56,7 @@ flex-direction: column;
 
 .header {
   height: 100%;
-  border-bottom: 10px solid #141D32;
+  border-bottom: 10px solid #222222;
 }
 
 .header .container {
@@ -66,13 +64,13 @@ flex-direction: column;
   justify-content: space-between;
   align-items: center;
   height: 100%;
-  background-color: #141D32;
+  background-color: #222222;
   
 }
 
 .header a {
   text-decoration: none;
-  color: #626be3;
+  color: tomato ;
   font: bold;
   display: flex;
   font-size: larger;
@@ -90,12 +88,12 @@ flex-direction: column;
   margin-left: 10%;
   justify-content: space-between;
   list-style: none;
-  color: #626be3;
+  color: tomato;
   margin-right: 10%;
 }
 
 .titulo {
-  color: #32b9cd;
+  color: #f52c15;
   width: fit-content;
   font-weight: 500;
 }
@@ -110,7 +108,8 @@ flex-direction: column;
   height: var(--tamanho-banner);
   color: white;
   background-size: cover;
-  background-image: url('../assets/imgs/Login.png');
+  background-image: url('../assets/imgs/fundo_galaxia.png');
+  background-attachment: fixed;
 }
 
 .banner .container {
@@ -147,9 +146,11 @@ flex-direction: column;
 
 .social .container .boxes {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   width: 100%;
   padding: 30px 0;
+  background-color: #414141;
+  color: #fff;
 }
 
 .social p {
@@ -160,12 +161,13 @@ flex-direction: column;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 400px;
 }
 
 /* FOOTER */
 
 .footer {
-  background-color: #141D32;
+  background-color: #222222;
   height: 150px;
   color: #fff;
   display: flex;
@@ -175,6 +177,8 @@ flex-direction: column;
 .footer .container {
   justify-content: center;
   text-align: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .footer .container .version {
@@ -185,9 +189,10 @@ flex-direction: column;
 
 .login {
   height: var(--tamanho-login);
-  background-image: url('../assets/imgs/Login.png');
+  background-image: url('../assets/imgs/fundo_galaxia.png');
   background-size: cover;
   position: relative;
+  background-attachment: fixed;
 }
 
 .login .container {
@@ -238,7 +243,7 @@ flex-direction: column;
 }
 
 .formulario select {
-  border: 2px solid #32b9cd;
+  border: 2px solid gray;
   background-color: #882D86;
   color: gray;
   height: 36px;
@@ -287,9 +292,10 @@ flex-direction: column;
 
 .cadastro {
   height: 10%;
-  background-image: url('../assets/imgs/Login.png');
+  background-image: url('../assets/imgs/fundo_galaxia.png');
   background-size: cover;
   position: relative;
+  background-attachment: fixed;
 }
 
 .cadastro .container {
@@ -301,7 +307,7 @@ flex-direction: column;
 
 .card {
   width: 27%;
-  background-color:#121D39;
+  background-color:#222222;
   display: flex;
   align-items: center;
   color: white;
@@ -341,7 +347,7 @@ flex-direction: column;
   color: gray;
   height: 36px;
   text-align: center;
-  border-radius: 0px;
+  border-radius: 50px;
   margin: 0;
 }
 
@@ -360,7 +366,7 @@ flex-direction: column;
   font-weight: 600;
   font-size: 18px;
   color: #fff;
-  background-color: #5692D6;
+  background-color: tomato;
   width: 120px;
   height: 50px;
   align-self: center;
@@ -391,14 +397,16 @@ flex-direction: column;
 
 .card_erro {
   display: none;
-  background-color: #fff;
-  color: black;
+  background-color: #000000;
+  color: rgb(255, 255, 255);
   width: 230px;
   position: fixed;
   border-radius: 4px;
   border: #e6005a 3px solid;
   padding: 10px;
   margin-right: 10%;
+  justify-content: center;
+  align-items: center;
 }
 
 .card_erro #mensagem_erro{
@@ -447,18 +455,6 @@ input {
 .loading-div img {
   height: 50px;
   width: 50px;
-}
-
-/* SIMULADOR */
-
-.simulador {
-  color: white;
-}
-
-.simulador .container {
-  flex-direction: column;
-  overflow: scroll; 
-  height: var(--tamanho-simulador);
 }
 
 /* ALERTA */
