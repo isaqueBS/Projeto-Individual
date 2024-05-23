@@ -51,12 +51,6 @@
                          Assim que inserir vá para o script abaixo.
                      -->
           <div class="campo">
-            <span>Empresa Preferida:</span>
-            <select name="empresas" id="listaEmpresas">
-              <option style="color: #222222;" selected>Selecione uma empresa</option>
-            </select>
-          </div>
-          <div class="campo">
             <span>Nome:</span>
             <input id="nome_input" type="text" placeholder="Seu nome" />
           </div>
@@ -86,9 +80,9 @@
   <!--footer inicio-->
   <div class="footer">
     <div class="container">
-      <h4>Feito com amor por aluno &hearts; SPTech &copy; 2023</h4>
-      <span class="version">v1.0.0</span>
-    </div>
+      <h4>Feito com amor pelo Isaque &hearts; SPTech &copy; 2024</h4>
+        <span class="version">v2.0.0</span>
+        <div>
   </div>
   <!--footer fim-->
 </body>
@@ -105,13 +99,11 @@
     var emailVar = email_input.value;
     var senhaVar = senha_input.value;
     var confirmacaoSenhaVar = confirmacao_senha_input.value;
-    var empresaVar = listaEmpresas.value
     if (
       nomeVar == "" ||
       emailVar == "" ||
       senhaVar == "" ||
-      confirmacaoSenhaVar == "" ||
-      empresaVar == ""
+      confirmacaoSenhaVar == ""
     ) {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
@@ -134,8 +126,7 @@
         // Agora vá para o arquivo routes/usuario.js
         nomeServer: nomeVar,
         emailServer: emailVar,
-        senhaServer: senhaVar,
-        empresaServer: empresaVar
+        senhaServer: senhaVar
       }),
     })
       .then(function (resposta) {
@@ -163,22 +154,6 @@
       });
 
     return false;
-  }
-
-  function listar() {
-    fetch("/empresas/listar", {
-      method: "GET",
-    })
-      .then(function (resposta) {
-        resposta.json().then((empresas) => {
-          empresas.forEach((empresa) => {
-            listaEmpresas.innerHTML += `<option value='${empresa.id}'>${empresa.cnpj}</option>`;
-          });
-        });
-      })
-      .catch(function (resposta) {
-        console.log(`#ERRO: ${resposta}`);
-      });
   }
 
   function sumirMensagem() {
