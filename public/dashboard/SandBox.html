@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GamerGalaxy | Login</title>
+    <link rel="stylesheet" href="../css/SiteInterno.css">
+    <link rel="icon" href="../assets/icon/iconControle.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+</head>
+
+<body>
+    <div class="fundo">
+        <div class="header">
+            <div class="container">
+                <ul class="navbar">
+                <span id="menuH" class="material-symbols-outlined" onclick="clickMenu()">
+                    <a>Gêneros</a>
+                </span>
+                    <li class="agora"></li>
+                    <li>|</li>
+                    <li>Deshboard</li>
+                    <li>|</li>
+                    <li>Edição-Aviso</li>
+                    <li>|</li>
+                    <li>Mural</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="banner">
+        <div class="containerIND">
+            <div class="conteudoPG">
+                <div id="itens-laterais" class="fechado">
+                    <ul class="listaItens">
+                        <!-- ITENS DO HAMBURGUER -->
+                        <li class="botão-lateral">
+                            <img style="width: 35px;" src="../assets/icons_generos/icon_Estrategia.png"> <a href="Estrategia.html">Estratégia</a><br> 
+                        </li>
+                        <li class="botão-lateral">
+                            <img style="width: 35px;" src="../assets/icons_generos/icon_Simulação.png"> <a href="Simulacao.html">Simulação</a><br> 
+                        </li>
+                        <li class="botão-lateral">
+                            <img style="width: 35px;" src="../assets/icons_generos/icon_Esportes.png"> <a href="Esportes.html">Esportes</a><br> 
+                        </li>
+                        <li class="botão-lateral">
+                            <img style="width: 30px;" src="../assets/icons_generos/icon_aventura.png"><a href="Aventura.html">Aventura</a><br>
+                        </li>
+                        <li class="botão-lateral">
+                            <img style="width: 35px;" src="../assets/icons_generos/icon_SandBox.png"> <a href="SandBox.html">SandBox</a><br> 
+                        </li>
+                        <li class="botão-lateral">
+                           <img style="width: 35px;" src="../assets/icons_generos/icon_Puzzle.png"> <a href="Puzzle.html">Puzzle</a><br> 
+                        </li>
+                        <li class="botão-lateral">
+                            <img style="width: 35px;" src="../assets/icons_generos/icon_Musica.png"> <a href="Musica.html">Músical</a><br> 
+                        </li>
+                        <li class="botão-lateral">
+                            <img style="width: 35px;" src="../assets/icons_generos/icon_Horror.png"> <a href="Horror.html">Horror</a><br> 
+                        </li>
+                        <li class="botão-lateral">
+                           <img style="width: 30px;" src="../assets/icons_generos/icon_Luta.png"> <a href="Luta.html">Luta</a><br> 
+                        </li>
+                        <li class="botão-lateral">
+                            <img style="width: 35px;" src="../assets/icons_generos/icon_Ação.png"><a href="Acao.html">Ação</a><br>
+                        </li>
+                        <li class="botão-lateral">
+                            <img style="width: 35px;" src="../assets/icons_generos/icon_MOBA.png"> <a href="MOBA.html">MOBA</a><br>
+                        </li>
+                        <li class="botão-lateral">
+                           <img style="width: 35px;" src="../assets/icons_generos/icon_RPG.png"> <a href="RPG.html">RPG</a><br>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Conteúdo principal da página -->      
+                <div class="conteudo-principal">
+                    <div class="cartao">
+                        <h2>Jogos SandBox</h2>
+                        <p>Os jogos do gênero de estratégia são projetados para desafiar os jogadores a utilizar habilidades mentais para alcançar objetivos específicos. O foco principal desses jogos é geralmente a tomada de decisões estratégicas, planejamento e gerenciamento de recursos para superar desafios dentro do jogo. Aqui está uma explicação mais detalhada do foco e do objetivo dos jogos de estratégia:</p> 
+                        <div class="cartao2">
+                            <h2> Decisões estratégicas:</h2>
+                            <p>
+                                Os jogadores são desafiados a tomar decisões significativas que terão impacto no resultado do jogo. Essas decisões podem envolver escolhas sobre o desenvolvimento de recursos, ações militares, diplomacia e muito mais.
+                        </div>
+                        <div class="cartao2">
+                            <h2>Planejamento: </h2>
+                            <p>
+                            Estratégia muitas vezes envolve a formulação de planos e estratégias para alcançar objetivos específicos. Os jogadores precisam antecipar eventos futuros e planejar suas ações de acordo.<br><br>
+                        </div>
+                        <div class="cartao2">
+                            <h2>Gerenciar recursos:</h2>
+                            <p>
+                             Muitos jogos de estratégia envolvem gerenciamento de recursos, onde os jogadores devem equilibrar o uso de recursos limitados para maximizar sua eficácia. Isso pode incluir recursos como dinheiro, tropas, tempo e muito mais.<br><br>
+                        </div>
+                        <div class="cartao2">
+                            <h2>Conhecimento do jogo:</h2>
+                            <p>
+                            Jogos de estratégia frequentemente exigem que os jogadores compreendam profundamente as mecânicas do jogo e explorem suas nuances para serem bem-sucedidos.<br><br>
+                        </div>
+                    </div>
+                    <!-- Adicione mais divs de cartão conforme necessário -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        function clickMenu() {
+            var itensLaterais = document.getElementById('itens-laterais');
+            if (itensLaterais.classList.contains('aberto')) {
+                itensLaterais.classList.remove('aberto');
+                itensLaterais.classList.add('fechado');
+            } else {
+                itensLaterais.classList.remove('fechado');
+                itensLaterais.classList.add('aberto');
+            }
+        }
+    </script>
+</body>
+
+</html>

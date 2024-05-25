@@ -11,7 +11,7 @@
     <script src="./js/sessao.js"></script>
 
     <link rel="stylesheet" href="./css/estilo.css">
-    <link rel="icon" href="./assets/icon/iconControle.png">
+    <link rel="icon" href="../assets/icon/iconControle.png">
     <link rel="preconnect" href="https://fonts.gstatic.com">
 </head>
 
@@ -23,6 +23,9 @@
         <ul class="navbar">
           <li class="agora">
             <a href="#">Inicial</a>
+          </li>
+          <li>
+            <a href="#livro">Sobre</a>
           </li>
           <li>|</li>
           <li>
@@ -57,7 +60,7 @@
               a expandirem seu conhecimento sobre o mundo dos games, <br>promovendo um espaço onde a diversão<br>
               e a aprendizagem caminham juntas.</p>
           </div>
-          <div class="box">
+          <div id="livro" class="box">
             <img src="assets/imgs/livro.png">
             <h4>Resumo</h4>
             <p>Este site oferece uma plataforma divertida e educativa para os entusiastas de jogos.<br>
@@ -84,3 +87,15 @@
   </body>
 
 </html>
+
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+  
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+  </script>

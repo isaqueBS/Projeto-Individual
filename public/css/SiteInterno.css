@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Barlow', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  height: 100vh; /* Ajuste de altura */
+  color: white;
+  background-size: cover;
+  background-image: url('../assets/imgs/fundo_galaxia.png');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.container {
+  display: flex;
+  width: 100%;
+  margin: 0;
+}
+
+.containerIND {
+  display: flex;
+}
+
+.header .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  flex-direction: row;
+  background-color: #222222;
+}
+
+.header a {
+  text-decoration: none;
+  color: tomato;
+  font-size: larger;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.agora {
+  font-weight: 800;
+}
+
+.navbar {
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  list-style: none;
+  color: tomato;  
+  position: relative;
+  margin-right: 15%;
+}
+
+.titulo {
+  color: #f52c15;
+  width: fit-content;
+  font-weight: 500;
+}
+
+.header h1 {
+  margin-right: 30%;
+  position: fixed;
+}
+
+/* BANNER */
+.banner {
+  height: 100vh; /* Ajuste de altura */
+}
+
+.banner .containerIND {
+  justify-content: center;
+  margin-top: 5%;
+}
+
+.banner .containerIND p {
+  width: 50%;
+  font-size: 36px;
+}
+
+.banner .containerIND .conteudoPG .conteudo-principal .cartao p {
+  width: 100%;
+  font-size: 36px;
+}
+
+.banner .containerIND span {
+  font-weight: 800;
+}
+
+
+/* ITENS LATERAIS */
+.material-symbols-outlined {
+  margin-bottom: 2px;
+}
+
+#itens-laterais {
+  background-color: #222222;
+  color: tomato;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20vw;
+  height: 100vh;
+  overflow: auto;
+  transition: transform 0.3s ease;
+  transform: translateX(-100%);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+}
+
+#itens-laterais.aberto {
+  transform: translateX(0);
+}
+
+#itens-laterais.fechado {
+  transform: translateX(-100%);
+}
+
+#itens-laterais .listaItens {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 40px;
+}
+
+#itens-laterais .listaItens .botão-lateral {
+  margin-top: 5%;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  justify-content: center;
+}
+
+#itens-laterais .listaItens .botão-lateral img {
+  margin-right: 10px;
+}
+
+#itens-laterais .listaItens a {
+  color: tomato;
+  text-decoration: none;
+  font-style: oblique;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+/*Textos da PG*/
+.conteudo-principal {
+  display: flex;
+  flex-wrap: wrap; /* Distribui as divs igualmente ao longo do eixo horizontal */
+}
+
+.cartao {
+  width: 700px; /* Define a largura das divs de cartão */
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 1, 0, 1);
+  background-color: #222222;
+  display: flex;
+  flex-direction: column;
+}
+
+.cartao h2 {
+  color: tomato;
+}
+
+.cartao p {
+  font-size: 20px !important;
+  text-align: justify;
+}
+
+.conteudo {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.cartao2 {
+  width: 50%; /* Altera a largura para metade do pai */
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 1);
+  background-color: #222222;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.imagem-jogo {
+  width: 50%; /* Ajusta a largura para metade do pai */
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+/* Estilize os elementos dentro dos cartões conforme necessário */
+.cartao2 h2 {
+  color: #6b3a4e;
+}
+
+.cartao2 p {
+  display: block;
+  width: 100%;
+  color: #fff;
+  font-size: 15px !important;
+  text-align: justify;
+  margin: 0;
+}
