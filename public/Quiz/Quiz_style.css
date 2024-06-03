@@ -1,0 +1,144 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Barlow', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  height: 100vh; /* Ajuste de altura */
+  color: white;
+  background-size: cover;
+  background-image: url('../assets/imgs/fundo_galaxia.png');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.container {
+  display: flex;
+  width: 100%;
+  margin: 0;
+}
+
+.containerIND {
+  display: flex;
+}
+
+.header .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  flex-direction: row;
+  background-color: #222222;
+}
+
+.header a {
+  text-decoration: none;
+  color: tomato;
+  font-size: larger;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+  height: 20%;
+}
+
+.agora {
+  font-weight: 800;
+}
+
+.navbar {
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  list-style: none;
+  color: tomato;  
+  position: relative;
+  margin-right: 5%;
+}
+
+.titulo {
+  color: #f52c15;
+  width: fit-content;
+  font-weight: 500;
+}
+
+.header h1 {
+  margin-right: 30%;
+  position: fixed;
+}
+
+.cartaoContorno{
+  width: 50%;
+  height: auto;
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 1);
+  background-color: #222222;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  top: +100px;
+}
+
+.cartaoContorno a{
+text-decoration: none;
+color: tomato;
+}
+
+.cartaoContorno .Questao{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.Questao {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.Resultado {
+  margin-bottom: 20px;
+  width: 100%;
+}
+.mensagem{
+  font: bold;
+  text-decoration: dashed;
+}
+
+.opcao {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.opcao img {
+  width: 150px;
+  height: 150px;
+  margin-right: 10px;
+  vertical-align: middle;
+  position: relative;
+  left: +20px;
+}
+
+.opcao input[type="radio"] {
+  margin-right: 10px;
+}
+
+.btn-nav-white {
+  text-decoration: solid;
+  font-size: large;
+  width: 20%;
+  font: bold; 
+  color: bisque;
+  background-color: tomato;
+  border: 3px solid tomato;
+  border-radius: 30px;
+  text-align: center;
+}

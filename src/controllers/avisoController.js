@@ -126,11 +126,33 @@ function deletar(req, res) {
         );
 }
 
+function jogarbanco(req, res) {
+    var certas = req.body.respostasCorretasServer;
+    var erradas = req.body.respostasIncorretasServer;
+    var idusuario = req.body.idusuarioServer;
+
+    usuarioModel.jogarbanco(certas,erradas,idusuario)
+        .then(
+            function (resultado) {
+                res.json(resultado);
+            }
+        ).catch(
+            function (erro) {
+                console.log(erro);
+                console.log(
+                    "\nHouve um erro ao realizar o cadastro! Erro: ",
+                    erro.sqlMessage
+                );
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
+
 module.exports = {
     listar,
     listarPorUsuario,
     pesquisarDescricao,
     publicar,
     editar,
-    deletar
+    deletar,
 }

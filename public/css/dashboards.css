@@ -348,7 +348,6 @@ canvas {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  border-right: 3px solid #32b9cd;
   background-color: #212124;
 }
 
@@ -365,7 +364,7 @@ canvas {
 }
 
 .header-left h1 {
-  color: #32b9cd;
+  color: #a01414;
 }
 
 .hello {
@@ -387,23 +386,23 @@ canvas {
 .btn-nav {
   width: 40%;
   color: white;
-  background-color: #e6005a;
-  border-radius: 5px;
+  background-color: tomato;
+  border-radius: 10px;
   text-align: center;
   padding: 2% 5%;
 }
 
 .btn-nav-white {
   width: 40%;
-  background-color: white;
-  border: 3px solid #e6005a;
-  border-radius: 5px;
+  background-color: tomato;
+  border: 3px solid tomato;
+  border-radius: 10px;
   text-align: center;
   padding: 2% 5%;
 }
 
 .btn-nav-white h3 {
-  color: #e6005a;
+  color: #222222;
   padding: 0;
   margin: 0;
 }
@@ -418,8 +417,8 @@ canvas {
   margin: 0;
   padding: 0;
   width: 20%;
-  background-color: #32b9cd;
-  color: white;
+  background-color: tomato;
+  color: #222222;
   border-radius: 10px;
   text-align: center;
   padding: 10px 15px;

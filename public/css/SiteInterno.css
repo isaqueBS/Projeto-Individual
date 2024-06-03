@@ -52,7 +52,7 @@ body {
   list-style: none;
   color: tomato;  
   position: relative;
-  margin-right: 15%;
+  margin-right: 5%;
 }
 
 .titulo {
@@ -127,7 +127,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 40px;
+  padding-top: 35px;
 }
 
 #itens-laterais .listaItens .botão-lateral {
@@ -185,12 +185,8 @@ body {
 }
 
 .cartao2 {
-  width: 50%; /* Altera a largura para metade do pai */
-  margin-bottom: 20px;
-  padding: 20px;
-  border: 1px solid #ccc;
+  width: 60%; /* Altera a largura para metade do pai */
   border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 1);
   background-color: #222222;
   box-sizing: border-box;
   display: flex;
@@ -198,12 +194,13 @@ body {
 }
 
 .imagem-jogo {
-  width: 50%; /* Ajusta a largura para metade do pai */
+  width: 40%;
   object-fit: cover;
-  border-radius: 5px;
+  border-radius: 15px;
+  padding: 7px;
 }
 
-/* Estilize os elementos dentro dos cartões conforme necessário */
+
 .cartao2 h2 {
   color: #6b3a4e;
 }
@@ -215,4 +212,99 @@ body {
   font-size: 15px !important;
   text-align: justify;
   margin: 0;
+}
+
+.cartaoContorno{
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 1);
+  background-color: #222222;
+  box-sizing: border-box;
+}
+
+.cartaoContorno a{
+text-decoration: none;
+color: tomato;
+}
+
+.cartaoContorno .iconesPS{
+  height: 30px; 
+  border-radius: 5px; 
+  padding: 3px;
+  vertical-align: middle;
+  position: relative;
+  top: -4px;
+
+}
+
+.cartaoContorno .iconesXBOX{
+  height: 30px; 
+  border-radius: 5px; 
+  padding: 3px;
+  vertical-align: middle;
+  position: relative;
+  top: -4px;
+
+}
+
+.iconesNT {
+  height: 30px; 
+  border-radius: 5px; 
+  padding: 3px;
+  vertical-align: middle;
+  position: relative;
+  top: -4px;
+
+}
+
+.cartaoContorno .avaliacao{
+  height: 80px;
+  position: relative;
+  vertical-align: middle;
+  top: -5px;
+}
+
+.rankContainer {
+    display: flex;
+    align-items: flex-start; 
+    justify-content: center;
+    gap: 20px;
+}
+
+.RankJogo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10%;
+}
+
+.tituloJogo {
+    margin: 10;
+    padding: 1%;
+    text-align: center;
+}
+
+.FotoRankJogo {
+  margin-left: 5%;
+}
+
+.cartaoContorno .itensRank{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.cartaoContorno .iconesPlataformas{
+  text-align: center;
+  margin-right: 5%;
+  margin-left: 10%;
+}
+
+.cartaoContorno .FotoRankJogo{
+  width: 300px;
 }

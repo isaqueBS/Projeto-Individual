@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Quiz_style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="fundo">
+        <div class="header">
+            <div class="container">
+                <ul class="navbar">
+                    <li><a href="../dashboard/Estrategia.html">+Gêneros</a></li>
+                    <li><a>|</a></li>
+                    <li><a href="../dashboard/cards.html">Início</a></li>
+                    <li><a>|</a></li>
+                    <li class="agora"><a href="QuizOficial.html">Quiz</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <center>
+
+        <div class="cartaoContorno">
+            <div class="Questao" id="q1">
+                <h2> Qual o jogo de Zumbi mais famoso da Capcom? </h2>
+                <div class="opcao">
+                    <input type="radio" id="q1A" name="q1" onclick="verificar()">
+                    Resident Evil
+                    <img src="../assets/Imagens Quiz/Resident_Evil.png">
+                </div>
+                <div class="opcao">
+                    <input type="radio" id="q1B" name="q1" onclick="verificar()">
+                    Silent Hill
+                    <img src="../assets/Imagens Quiz/SilentHill.png">
+                </div>
+                <div class="opcao">
+                    <input type="radio" id="q1C" name="q1" onclick="verificar()">
+                    The Evil Within
+                    <img src="../assets/Imagens Quiz/The Evil Within.png">
+                </div>
+                <div class="opcao">
+                    <input type="radio" id="q1D" name="q1" onclick="verificar()">
+                    Left 4 Dead
+                    <img src="../assets/Imagens Quiz/Left4Dead.jpg">
+                </div>
+            </div>
+
+            <div class="Questao" id="q2" style="display: none;">
+                <h2>Qual o nome do Jogo onde o protagonista tem o nome de Kratos?</h2>
+                <div class="opcao">
+                    <input type="radio" id="q2A" name="q2" onclick="verificar()">
+                    Shadow of the Colossus
+                    <img src="../assets/Imagens Quiz/ShadowOfTheColossos.png">
+                </div>
+                <div class="opcao">
+                    <input type="radio" id="q2B" name="q2" onclick="verificar()">
+                    God of War
+                    <img src="../assets/Imagens Quiz/GodOfWar.png">
+                </div>
+                <div class="opcao">
+                    <input type="radio" id="q2C" name="q2" onclick="verificar()">
+                    Uncharted
+                    <img src="../assets/Imagens Quiz/Uncharted.png">
+                </div>
+                <div class="opcao">
+                    <input type="radio" id="q2D" name="q2" onclick="verificar()">
+                    Pokemon
+                    <img src="../assets/Imagens Quiz/Pokemon.png">
+                </div>
+            </div>
+
+            <div class="Questao" id="q3" style="display: none;">
+                <h2> Qual o nome do protagonista do famoso jogo da Nintendo, Zelda?</h2>
+                <div class="opcao">
+                    <input type="radio" id="q3A" name="q3" onclick="verificar()">
+                    Zelda
+                    <img src="../assets/Imagens Quiz/Zelda.png">
+                </div>
+                <div class="opcao">
+                    <input type="radio" id="q3B" name="q3" onclick="verificar()">
+                    Kirby
+                    <img src="../assets/Imagens Quiz/Kirby.png">
+                </div>
+                <div class="opcao">
+                    <input type="radio" id="q3C" name="q3" onclick="verificar()">
+                    Ash
+                    <img src="../assets/Imagens Quiz/Ash.jpg">
+                </div>
+                <div class="opcao">
+                    <input type="radio" id="q3D" name="q3" onclick="verificar()">
+                    Link
+                    <img src="../assets/Imagens Quiz/Link.png">
+                </div>
+            </div>
+
+            <div class="Questao" id="q4" style="display: none;">
+                <h2> Qual o jogo mais vendido da História?</h2>
+                <div class="opcao">
+                    <input type="radio" id="q4A" name="q4" onclick="verificar()">
+                    Super Mario 64
+                    <img src="../assets/Imagens Quiz/SuperMario64.jpg">
+                </div>
+                <div class="opcao">
+                    <input type="radio" id="q4B" name="q4" onclick="verificar()">
+                    Tetris
+                    <img src="../assets/Imagens Quiz/Tetris.png">
+                </div>
+                <div class="opcao">
+                    <input type="radio" id="q4C" name="q4" onclick="verificar()">
+                    Minecraft
+                    <img src="../assets/Imagens Quiz/Minecraft.jpeg">
+                </div>
+                <div class="opcao">
+                    <input type="radio" id="q4D" name="q4" onclick="verificar()">
+                    Grand Theft Auto V
+                    <img src="../assets/Imagens Quiz/GTA_V.jpg">
+                </div>
+            </div>
+
+            <div class="Questao" id="q5" style="display: none;">
+                <h2> Quem é considerado o grande rival do Sonic?</h2>
+                <div class="opcao">
+                    <input type="radio" id="q5A" name="q5" onclick="verificar()">
+                    Shadow
+                    <img src="../assets/Imagens Quiz/Shadow.webp">
+                </div>
+                <div class="opcao">
+                    <input type="radio" id="q5B" name="q5" onclick="verificar()">
+                    Knuckles
+                    <img src="../assets/Imagens Quiz/Knuckles.png">
+                </div>
+                <div class="opcao">
+                    <input type="radio" id="q5C" name="q5" onclick="verificar()">
+                    Tails
+                    <img src="../assets/Imagens Quiz/Tails.png">
+                </div>
+                <div class="opcao">
+                    <input type="radio" id="q5D" name="q5" onclick="verificar()">
+                    Dr. Robotnik
+                    <img src="../assets/Imagens Quiz/Dr.Robotnik.png">
+                </div>
+            </div>
+
+            <div class="Questao" id="q6" style="display: none;">
+                <h2> Quem Ganhou o Game of The Year de 2020?</h2>
+                <div class="opcao">
+                    <input type="radio" id="q6A" name="q6" onclick="verificar()">
+                    Red Dead Redemption 2
+                    <img src="../assets/Imagens Quiz/RedDeadRedemption2.jpeg">
+                </div>
+                <div class="opcao">
+                    <input type="radio" id="q6B" name="q6" onclick="verificar()">
+                    The Last of Us Part II
+                    <img src="../assets/Imagens Quiz/TheLestOfUs.png">
+                </div>
+                <div class="opcao">
+                    <input type="radio" id="q6C" name="q6" onclick="verificar()">
+                    Sekiro
+                    <img src="../assets/Imagens Quiz/Sekiro.jpg">
+                </div>
+                <div class="opcao">
+                    <input type="radio" id="q6D" name="q6" onclick="verificar()">
+                    The Witcher 3
+                    <img src="../assets/Imagens Quiz/TheWitcher3.jpeg">
+                </div>
+            </div>
+
+            <div class="Questao" id="q7" style="display: none;">
+                <h2> Quem é o diretor da franquia Metal Gear Solid V: The Phantom Pain?</h2>
+                <div class="opcao">
+                    <input type="radio" id="q7A" name="q7" onclick="verificar()">
+                    HIDEO KOJIMA
+                    <img src="../assets/Imagens Quiz/Hideo Kojima.png">
+                </div>
+                <div class="opcao">
+                    <input type="radio" id="q7B" name="q7" onclick="verificar()">
+                    SHIGERU MIYAMOTO
+                    <img src="../assets/Imagens Quiz/Shigeru Miyamoto.jpg">
+                </div>
+                <div class="opcao">
+                    <input type="radio" id="q7C" name="q7" onclick="verificar()">
+                    GABE NEWELL
+                    <img src="../assets/Imagens Quiz/Gabe Newell.jpg">
+                </div>
+                <div class="opcao">
+                    <input type="radio" id="q7D" name="q7" onclick="verificar()">
+                    SAM E DAN HOUSE
+                    <img src="../assets/Imagens Quiz/Sam e Dan.jpg">
+                </div>
+            </div>
+            <div class="Resultado" id="Resultado" style="display: none;">
+                <h2>Aqui está sua Pontuação:</h2>
+                <div class="mensagem" style="color: tomato;" id="div_mensagem"></div>
+                <div id="GfQuiz" style="width: 370px; height: 200px; display: none;">
+                    <canvas id="myChart"></canvas>
+                </div>
+                <br>
+                <button class="btn-nav-white" id="Salvar" onclick="Salvar()">Salvar Pontuação</button>
+            </div>
+
+        </div>
+
+    </center>
+</body>
+
+</html>
+
+<script>
+    var contq = 1;
+    var PontosFeitos = 0;
+    var PontosPerdidos = 7;
+
+    function verificar() {
+
+        if (contq == 1) {
+
+            if (q1A.checked) {
+                PontosFeitos++;
+                PontosPerdidos--;
+            }
+            contq++;
+            q1.style.display = "none";
+            q2.style.display = "block";
+
+        }
+        else if (contq == 2) {
+
+            if (q2B.checked) {
+                PontosFeitos++;
+                PontosPerdidos--;
+            }
+            contq++;
+            q2.style.display = "none";
+            q3.style.display = "block";
+        }
+        else if (contq == 3) {
+
+            if (q3D.checked) {
+                PontosFeitos++;
+                PontosPerdidos--;
+            }
+            contq++;
+            q3.style.display = "none";
+            q4.style.display = "block";
+        }
+        else if (contq == 4) {
+
+            if (q4C.checked) {
+                PontosFeitos++;
+                PontosPerdidos--;
+            }
+            contq++;
+            q4.style.display = "none";
+            q5.style.display = "block";
+        }
+        else if (contq == 5) {
+
+            if (q5D.checked) {
+                PontosFeitos++;
+                PontosPerdidos--;
+            }
+            contq++;
+            q5.style.display = "none";
+            q6.style.display = "block";
+        }
+        else if (contq == 6) {
+
+            if (q6B.checked) {
+                PontosFeitos++;
+                PontosPerdidos--;
+            }
+            contq++
+            q6.style.display = "none";
+            q7.style.display = "block";
+        }
+        else if (contq == 7) {
+
+            if (q7A.checked) {
+                PontosFeitos++;
+                PontosPerdidos--;
+            }
+            contq++;
+            q7.style.display = "none";
+            GfQuiz.style.display = "block";
+            Resultado.style.display = "block";
+            atualizarGraficos();
+        }
+
+        if (PontosFeitos >= 0 || PontosFeitos <= 3) {
+            div_mensagem.innerHTML = `<span style="font=bold" Você é iniciante ainda.</span>`
+        }
+        if (PontosFeitos >= 4 || PontosFeitos <= 6) {
+            var cor = 'yellow';
+            div_mensagem.innerHTML = `<span style="color: ${cor} font=bold"> Caramba, você até que Manja.</span>`
+        }
+        if (PontosFeitos == 7) {
+            var cor = 'blue';
+            div_mensagem.innerHTML = `<span style="color: ${cor} font=bold"> Slk, Gabaritou o baguio, AMASSOU!!.</span>`
+        }
+
+    }
+
+    const labels = [
+        'Acertos',
+        'Erros',
+    ];
+
+    const data = {
+        labels: labels,
+        datasets: [{
+            label: 'Pontuação',
+            backgroundColor: ['green', 'red'],
+            data: [PontosFeitos, PontosPerdidos],
+        }
+        ]
+    };
+
+
+    const config = {
+        type: 'pie',
+        data: data,
+        options: {}
+    };
+
+    let myChart = null;
+
+
+    function atualizarGraficos() {
+
+        if (myChart) {
+            myChart.destroy();
+        }
+        data.datasets[0].data = [PontosFeitos, PontosPerdidos];
+        myChart = new Chart(
+            document.getElementById('myChart'),
+            config
+        );
+
+    }
+
+    window.onload = function () {
+        atualizarGraficos();
+    };
+
+
+    function Salvar() {
+
+        var certas = PontosFeitos;
+        var erradas = PontosPerdidos;
+        fetch("/usuarios/Salvar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                respostasCorretasServer: certas,
+                respostasIncorretasServer: erradas,
+            }),
+        })
+
+    }
+
+</script>
