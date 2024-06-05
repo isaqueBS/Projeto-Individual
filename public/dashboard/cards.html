@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" href="./../css/dashboards.css">
     <link rel="stylesheet" href="./../css/estilo.css" />
+    <link rel="stylesheet" href="../css/SiteInterno.css">
 
     <script src="../js/sessao.js"></script>
     <script src="../js/alerta.js"></script>
@@ -20,7 +21,7 @@
         rel="stylesheet">
 </head>
 
-<body onload="validarSessao(), atualizacaoPeriodica()">
+
 
     <div class="janela">
 
@@ -53,49 +54,32 @@
             </div>
 
         </div>
-
-        <div class="dash">
-            <div id="alerta">
-            </div>
-            <div class="area-parametros-alerta">
-                <p class="titulo-legenda">
-                    Legenda - Parâmetros para Alertas
-                </p>
-                <div class="parametros-alerta">
-                    <div class="item-regua perigo-frio">
-                        <p>Perigo</p>
-                        <p>&lt;=5°C</p>
-                    </div>
-                    <div class="item-regua alerta-frio">
-                        <p>Alerta</p>
-                        <p>&lt;=10°C</p>
-                    </div>
-                    <div class="item-regua ideal">
-                        <p>Ideal</p>
-                        <p>20°C</p>
-                    </div>
-                    <div class="item-regua alerta-quente">
-                        <p>Alerta</p>
-                        <p>&gt;=22°C</p>
-                    </div>
-                    <div class="item-regua perigo-quente">
-                        <p>Perigo</p>
-                        <p>&gt;=23°C</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="cards" id="cardAquarios">
-
-            </div>
-
+        <center>
+            <div class="cartaoContorno2">
+                <img class="Selo" src="../assets/imagens de Jogos/Selo.png"><h1>Sobre o Site:</h1>
+                <div class="cartao3"><h2><p>Este site surge como uma solução essencial para tirar uma dúvida que é comum entre os 
+                gamers ("Será que esse jogo vale a pena?")    . Onde o objetivo principal é ajudar os jogadores a tomarem decisões informadas sobre onde investir seu 
+                dinheiro em jogos eletrônicos. Para isso, será através desta plataforma que os usuários podem encontrar os 
+                jogos mais bem avaliados de acordo com a categoria de seu interesse. Seja você um fã de ação, terror, RPG, esportes 
+                ou qualquer outro gênero, este site fornecerá análises detalhadas e classificações de jogos que foram cuidadosamente 
+                selecionados com base em avaliações críticas e feedbacks de jogadores reais.
+            </p></h2></div>
         </div>
+            <img class="Joinha" src="../assets/imagens de Jogos/Joinha.png">
+            <img class="Toad" src="../assets/imagens de Jogos/Toad.png">
+        </center>
+   
+        <!--Colocando cor em uma Div mensagem <b style="color=red";>Conteudo</b>-->
+
 
     </div>
 
 </body>
 
+
 <script>
+
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
     function exibirAquarios() {
         JSON.parse(sessionStorage.AQUARIOS).forEach(item => {

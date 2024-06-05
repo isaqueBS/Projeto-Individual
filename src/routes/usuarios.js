@@ -12,7 +12,7 @@ router.post("/autenticar", function (req, res) {
     usuarioController.autenticar(req, res);
 });
 
-router.post("/Salvar", function (req, res) {
+router.post("/Salvar/:idUsuario", function (req, res) {
     usuarioController.Salvar(req, res);
 });
 

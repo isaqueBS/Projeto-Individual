@@ -124,7 +124,7 @@
             </div>
 
             <div class="Questao" id="q5" style="display: none;">
-                <h2> Quem é considerado o grande rival do Sonic?</h2>
+                <h2> Quem é considerado o grande inimigo do Sonic?</h2>
                 <div class="opcao">
                     <input type="radio" id="q5A" name="q5" onclick="verificar()">
                     Shadow
@@ -251,7 +251,7 @@
         }
         else if (contq == 4) {
 
-            if (q4C.checked) {
+            if (q4B.checked) {
                 PontosFeitos++;
                 PontosPerdidos--;
             }
@@ -353,7 +353,8 @@
 
         var certas = PontosFeitos;
         var erradas = PontosPerdidos;
-        fetch("/usuarios/Salvar", {
+        var idUsuario = sessionStorage.ID_USUARIO;
+        fetch(`/usuarios/Salvar/${idUsuario}`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -361,6 +362,7 @@
             body: JSON.stringify({
                 respostasCorretasServer: certas,
                 respostasIncorretasServer: erradas,
+                idUsuarioServer: sessionStorage.ID_USUARIO
             }),
         })
 

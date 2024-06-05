@@ -86,8 +86,9 @@ function cadastrar(req, res) {
 function Salvar(req, res) {
     var certas = req.body.respostasCorretasServer;
     var erradas = req.body.respostasIncorretasServer;
+    var idUsuario = req.body.idUsuarioServer;
 
-    usuarioModel.Salvar(certas,erradas)
+    usuarioModel.Salvar(certas,erradas, idUsuario)
         .then(
             function (resultado) {
                 res.json(resultado);

@@ -302,9 +302,77 @@ color: tomato;
 .cartaoContorno .iconesPlataformas{
   text-align: center;
   margin-right: 5%;
-  margin-left: 10%;
+  margin-left: 5%;
 }
 
 .cartaoContorno .FotoRankJogo{
-  width: 300px;
+  width: 250px;
+}
+
+.cartaoContorno2{
+  width: 800px;
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 1);
+  background-color: #222222;
+  box-sizing: border-box;
+  position: relative;
+  left: 53%;
+  top: 10%;
+  color: rgb(163, 29, 29);
+}
+
+.cartao3 {
+  width: 700px; /* Define a largura das divs de cartão */
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 1, 0, 1);
+  background-color: #222222;
+  display: flex;
+  flex-direction: column;
+}
+
+.cartao3 h2 {
+  color: rgb(173, 167, 167);
+}
+
+.cartao3 p {
+  font-size: 20px !important;
+  text-align: justify;
+}
+
+.Joinha {
+  position: absolute;
+  width: 180px;
+  bottom: +0px;
+  right : +5px;
+}
+
+.Selo {
+position: absolute;
+width: 300px;
+left: -140px;
+bottom: +370px;
+}
+
+.Toad {
+  position: absolute;
+  bottom: +5px;
+  left: +330px;
+  width: 180px;
+}
+
+.PrecoNormal {
+  color:#a72e20;
+}
+
+.PrecoPromocao{
+  color: rgb(50, 168, 50);
+}
+
+.classificacao {
+  width: 60px;
 }

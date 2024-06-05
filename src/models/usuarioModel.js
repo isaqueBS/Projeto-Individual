@@ -22,11 +22,11 @@ function cadastrar(nome, email, senha) {
     return database.executar(instrucaoSql);
 }
 
-function Salvar(certas,erradas) {
-    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function Salvar():", certas, erradas);
+function Salvar(certas,erradas, idUsuario) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function Salvar():", certas, erradas, idUsuario);
 
     var instrucaoSql =`
-        INSERT INTO Quiz (Certas, Erradas) VALUES ('${certas}', '${erradas}');
+        INSERT INTO Quiz (Certas, Erradas, fkUsuario) VALUES ('${certas}', '${erradas}', '${idUsuario}');
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
