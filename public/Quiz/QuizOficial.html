@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>GamerGalaxy | Quiz</title>
     <link rel="stylesheet" href="Quiz_style.css">
+    <link rel="icon" href="../assets/icon/iconControle.png">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
@@ -201,7 +202,7 @@
                     <canvas id="myChart"></canvas>
                 </div>
                 <br>
-                <button class="btn-nav-white" id="Salvar" onclick="Salvar()">Salvar Pontuação</button>
+                <button style="display: block;" class="btn-nav-white" id="Botao" onclick="Salvar()">Salvar Pontuação</button>
             </div>
 
         </div>
@@ -354,6 +355,8 @@
         var certas = PontosFeitos;
         var erradas = PontosPerdidos;
         var idUsuario = sessionStorage.ID_USUARIO;
+
+        
         fetch(`/usuarios/Salvar/${idUsuario}`, {
             method: "POST",
             headers: {
@@ -365,7 +368,8 @@
                 idUsuarioServer: sessionStorage.ID_USUARIO
             }),
         })
-
+        
+        Botao.style.display = "none";
     }
 
 </script>

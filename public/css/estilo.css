@@ -398,17 +398,18 @@ flex-direction: column;
 
 .card_erro {
   display: none;
-  background-color: #000000;
+  background-color: #222222;
   color: rgb(255, 255, 255);
   width: 230px;
   position: fixed;
-  border-radius: 4px;
-  border: #e6005a 3px solid;
+  border-radius: 30px;
+  border: tomato 3px solid;
   padding: 10px;
   margin-right: 10%;
   justify-content: center;
-  align-items: center;
+  text-align: center;
 }
+
 
 .card_erro #mensagem_erro{
   font-weight: 500;
