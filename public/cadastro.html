@@ -107,7 +107,8 @@
      || senhaVar == "" || confirmacaoSenhaVar == "")
     ) {
       cardErro.style.display = "block";
-      mensagem_erro.innerHTML = "Preencha todos os campos corretamente!";
+      mensagem_erro.innerHTML = `Preencha todos os campos corretamente!<br>
+      <b>O nome precisa ter no minimo 3 letras, e o Email precisa conter @ E . (Ponto)</b>`;
       
       finalizarAguardar();
       return false;
