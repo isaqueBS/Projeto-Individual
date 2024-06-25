@@ -7,6 +7,11 @@ body {
   background-image: url(../assets/imgs/fundo_galaxia.png);
 }
 
+body::-webkit-scrollbar {
+  display: none; /*Esta função oculta a barra de rolagem da página - Dia - 25/06*/
+}
+
+
 
 :root {
   --tamanho-header: 80px;

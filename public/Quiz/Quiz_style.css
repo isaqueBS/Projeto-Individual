@@ -11,6 +11,10 @@ body {
   background-repeat: no-repeat;
 }
 
+body::-webkit-scrollbar {
+  display: none; /*Esta função oculta a barra de rolagem da página - Dia - 25/06*/
+}
+
 .container {
   display: flex;
   width: 100%;
