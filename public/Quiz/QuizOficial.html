@@ -25,6 +25,15 @@
         </div>
     </div>
 
+    
+    <div class="Pontuacao" id="Pontuacao">
+        <div id="div_mensagem">
+            <b>Pontos = 0/700</b> <!--Essa Div serve para Mostrar a Pontuação do usuário caso ele pontue ou não dentro do Quiz.
+            De começo ela permanece com um texto já selecionado, mas que será atualizado quando o usuário responde a primeira questão
+            do Quiz - Dia - 25/06  -->
+        </div>
+    </div>
+
     <center>
 
         <div class="cartaoContorno">
@@ -196,7 +205,7 @@
                 </div>
             </div>
             <div class="Resultado" id="Resultado" style="display: none;">
-                <h2>Aqui está sua Pontuação:</h2>
+                <h2>Aqui esta o Gráfico para mostrar quantas questões você Acertou:</h2>
                 <div class="mensagem" style="color: tomato;" id="div_mensagem"></div>
                 <div id="GfQuiz" style="width: 370px; height: 200px; display: none;">
                     <canvas id="myChart"></canvas>
@@ -206,24 +215,30 @@
             </div>
 
         </div>
-
     </center>
+
+
 </body>
 
 </html>
 
 <script>
     var contq = 1;
-    var PontosFeitos = 0;
-    var PontosPerdidos = 7;
+    var Questoes_Certas = 0;
+    var Questoes_Erradas = 7;
+
+    var Pontuacao_Max = 700;
+    var Sua_Pontuacao = 0;
+
 
     function verificar() {
 
         if (contq == 1) {
 
             if (q1A.checked) {
-                PontosFeitos++;
-                PontosPerdidos--;
+                Questoes_Certas++;
+                Sua_Pontuacao += 25;
+                Questoes_Erradas--;
             }
             contq++;
             q1.style.display = "none";
@@ -233,8 +248,9 @@
         else if (contq == 2) {
 
             if (q2B.checked) {
-                PontosFeitos++;
-                PontosPerdidos--;
+                Questoes_Certas++;
+                Sua_Pontuacao += 50;
+                Questoes_Erradas--;
             }
             contq++;
             q2.style.display = "none";
@@ -243,8 +259,9 @@
         else if (contq == 3) {
 
             if (q3D.checked) {
-                PontosFeitos++;
-                PontosPerdidos--;
+                Questoes_Certas++;
+                Sua_Pontuacao += 75;
+                Questoes_Erradas--;
             }
             contq++;
             q3.style.display = "none";
@@ -253,8 +270,9 @@
         else if (contq == 4) {
 
             if (q4B.checked) {
-                PontosFeitos++;
-                PontosPerdidos--;
+                Questoes_Certas++;
+                Sua_Pontuacao += 100;
+                Questoes_Erradas--;
             }
             contq++;
             q4.style.display = "none";
@@ -263,8 +281,9 @@
         else if (contq == 5) {
 
             if (q5D.checked) {
-                PontosFeitos++;
-                PontosPerdidos--;
+                Questoes_Certas++;
+                Sua_Pontuacao += 125;
+                Questoes_Erradas--;
             }
             contq++;
             q5.style.display = "none";
@@ -273,8 +292,9 @@
         else if (contq == 6) {
 
             if (q6B.checked) {
-                PontosFeitos++;
-                PontosPerdidos--;
+                Questoes_Certas++;
+                Sua_Pontuacao += 150;
+                Questoes_Erradas--;
             }
             contq++
             q6.style.display = "none";
@@ -283,8 +303,9 @@
         else if (contq == 7) {
 
             if (q7A.checked) {
-                PontosFeitos++;
-                PontosPerdidos--;
+                Questoes_Certas++;
+                Sua_Pontuacao += 175;
+                Questoes_Erradas--;
             }
             contq++;
             q7.style.display = "none";
@@ -293,14 +314,20 @@
             atualizarGraficos();
         }
 
-        if (PontosFeitos >= 0 || PontosFeitos <= 3) {
+        for(cont = Sua_Pontuacao ; cont <= Pontuacao_Max ; cont++){
+            document.getElementById('div_mensagem').innerHTML = `<b>Pontos = ${Sua_Pontuacao}/${Pontuacao_Max}</b>`
+            /*É nesse FOR, que o texto presente na Div PONTUACAO será atualizado, mas isso só acontece quando o usuario responde
+             a primeira questão do Quiz - Dia - 25/06 */
+        }
+
+        if (Questoes_Certas >= 0 || Questoes_Certas <= 3) {
             div_mensagem.innerHTML = `<span style="font=bold" Você é iniciante ainda.</span>`
         }
-        if (PontosFeitos >= 4 || PontosFeitos <= 6) {
+        if (Questoes_Certas >= 4 || Questoes_Certas <= 6) {
             var cor = 'yellow';
             div_mensagem.innerHTML = `<span style="color: ${cor} font=bold"> Caramba, você até que Manja.</span>`
         }
-        if (PontosFeitos == 7) {
+        if (Questoes_Certas == 7) {
             var cor = 'blue';
             div_mensagem.innerHTML = `<span style="color: ${cor} font=bold"> Slk, Gabaritou o baguio, AMASSOU!!.</span>`
         }
@@ -317,7 +344,7 @@
         datasets: [{
             label: 'Pontuação',
             backgroundColor: ['green', 'red'],
-            data: [PontosFeitos, PontosPerdidos],
+            data: [Questoes_Certas, Questoes_Erradas],
         }
         ]
     };
@@ -337,7 +364,7 @@
         if (myChart) {
             myChart.destroy();
         }
-        data.datasets[0].data = [PontosFeitos, PontosPerdidos];
+        data.datasets[0].data = [Questoes_Certas, Questoes_Erradas];
         myChart = new Chart(
             document.getElementById('myChart'),
             config
@@ -352,8 +379,8 @@
 
     function Salvar() {
 
-        var certas = PontosFeitos;
-        var erradas = PontosPerdidos;
+        var certas = Questoes_Certas;
+        var erradas = Questoes_Erradas;
         var idUsuario = sessionStorage.ID_USUARIO;
 
         

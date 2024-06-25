@@ -10,6 +10,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
 }
+
 .container {
   display: flex;
   width: 100%;
@@ -80,7 +81,7 @@ body {
   justify-content: center;
   flex-direction: column;
   position: relative;
-  top: +100px;
+  top: +50px;
 }
 
 .cartaoContorno a{
@@ -141,4 +142,29 @@ color: tomato;
   border: 3px solid tomato;
   border-radius: 30px;
   text-align: center;
+}
+
+.Pontuacao{
+  width: 200px;
+  height: auto;
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 1);
+  background-color: #222222;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: fixed; /*Utilizei o Fixed para que o usuário sempre veja como está sua pontuação - Dia - 25/06 */
+  left: 80%;
+  top: +100px;
+  color: tomato;
+
+}
+
+.div_mensagem{
+  color: tomato;
 }
