@@ -86,9 +86,10 @@ function cadastrar(req, res) {
 function Salvar(req, res) {
     var certas = req.body.respostasCorretasServer;
     var erradas = req.body.respostasIncorretasServer;
+    var pontos = req.body.PontuacaoServer;
     var idUsuario = req.body.idUsuarioServer;
 
-    usuarioModel.Salvar(certas,erradas, idUsuario)
+    usuarioModel.Salvar(certas, erradas, pontos, idUsuario)
         .then(
             function (resultado) {
                 res.json(resultado);
@@ -97,7 +98,7 @@ function Salvar(req, res) {
             function (erro) {
                 console.log(erro);
                 console.log(
-                    "\nHouve um erro ao realizar o cadastro! Erro: ",
+                    "\nHouve um erro ao Salvar o Quiz! Erro: ",
                     erro.sqlMessage
                 );
                 res.status(500).json(erro.sqlMessage);
@@ -105,8 +106,10 @@ function Salvar(req, res) {
         );
 }
 
+
+
 module.exports = {
     autenticar,
     cadastrar,
     Salvar
-}
+};

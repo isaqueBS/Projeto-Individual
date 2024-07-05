@@ -22,15 +22,17 @@ function cadastrar(nome, email, senha) {
     return database.executar(instrucaoSql);
 }
 
-function Salvar(certas,erradas, idUsuario) {
+function Salvar(certas, erradas, pontos, idUsuario) { // Adicionando a função Pontos para que sejam armazenadas também no banco
+    // de Dados quando a Função Salvar for Executada no Site - 01/07
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function Salvar():", certas, erradas, idUsuario);
 
     var instrucaoSql =`
-        INSERT INTO Quiz (Certas, Erradas, fkUsuario) VALUES ('${certas}', '${erradas}', '${idUsuario}');
-    `;
+        INSERT INTO Quiz (Certas, Erradas, PontosUsuario, fkUsuario) VALUES ('${certas}', '${erradas}', '${pontos}',  '${idUsuario}'); 
+    `; //Adicionando a Variável 'Pontos', para que agora eles também sejam inseridos dentro do Banco de Dados
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
+
 
 module.exports = {
     autenticar,

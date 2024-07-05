@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="Quiz_style.css">
     <link rel="icon" href="../assets/icon/iconControle.png">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script> <!--Utilizado uma nova API do ChartJS, que serve para manipuar o texto 
+    presente na exibição dos valores do gráfico - 04/07-->
 </head>
 
 <body>
@@ -20,17 +22,19 @@
                     <li><a href="../dashboard/cards.html">Início</a></li>
                     <li><a>|</a></li>
                     <li class="agora"><a href="QuizOficial.html">Quiz</a></li>
+
                 </ul>
             </div>
         </div>
     </div>
 
-    
+
     <div class="Pontuacao" id="Pontuacao">
         <div id="div_mensagem">
-            <b>Pontos = 0/700</b> <!--Essa Div serve para Mostrar a Pontuação do usuário caso ele pontue ou não dentro do Quiz.
+            <b>Pontos = 0/800</b> <!--Essa Div serve para Mostrar a Pontuação do usuário caso ele pontue ou não dentro do Quiz.
             De começo ela permanece com um texto já selecionado, mas que será atualizado quando o usuário responde a primeira questão
             do Quiz - Dia - 25/06  -->
+            <!--Atualizando a pontuação total do usuário de 700 para 800 - 04/07-->
         </div>
     </div>
 
@@ -204,11 +208,46 @@
                     <img src="../assets/Imagens Quiz/Sam e Dan.jpg">
                 </div>
             </div>
+
+            <!--Adicionando uma nova questão pra o Quiz - 04/07-->
+
+            <div class="Questao" id="q8" style="display: none;">
+                <h2> Em que ano foi lançado o primeiro Console?</h2>
+                <div class="opcao">
+                    <input type="radio" id="q8A" name="q8" onclick="verificar()">
+                    No Ano de 1988
+                    <img src="../assets/Imagens Quiz/Console1.png">
+                </div>
+                <div class="opcao">
+                    <input type="radio" id="q8B" name="q8" onclick="verificar()">
+                    No Ano de 1972
+                    <img src="../assets/Imagens Quiz/Console2.png">
+                </div>
+                <div class="opcao">
+                    <input type="radio" id="q8C" name="q8" onclick="verificar()">
+                    No Ano de 1969
+                    <img src="../assets/Imagens Quiz/Console3.png">
+                </div>
+                <div class="opcao">
+                    <input type="radio" id="q8D" name="q8" onclick="verificar()">
+                    No Ano de 1981
+                    <img src="../assets/Imagens Quiz/Console4.png">
+                </div>
+            </div>
             <div class="Resultado" id="Resultado" style="display: none;">
                 <h2>Aqui esta o Gráfico para mostrar quantas questões você Acertou:</h2>
                 <div class="mensagem" style="color: tomato;" id="div_mensagem"></div>
                 <div id="GfQuiz" style="width: 370px; height: 200px; display: none;">
                     <canvas id="myChart"></canvas>
+                </div>
+                <br>
+            </div>
+            <!--Adicionando um segundo gráfico na tela de resultados do Quiz - 05/07 --> 
+            <div class="Resultado2" id="Resultado2" style="display: none;">
+                <h2>percentual de Quantas questões você acertou:</h2>
+                <div class="mensagem" style="color: tomato;" id="div_mensagem"></div>
+                <div id="GfQuiz2" style="width: 370px; height: 200px; display: none;">
+                    <canvas id="myChart2"></canvas>
                 </div>
                 <br>
                 <button style="display: block;" class="btn-nav-white" id="Botao" onclick="Salvar()">Salvar Pontuação</button>
@@ -225,10 +264,20 @@
 <script>
     var contq = 1;
     var Questoes_Certas = 0;
-    var Questoes_Erradas = 7;
+    var Questoes_Erradas = 8;
 
-    var Pontuacao_Max = 700;
+    var Pontuacao_Max = 800; //Atualizando o MAX de pontos que o usuário pode fazer de 700 para 800 - 04/07
     var Sua_Pontuacao = 0;
+
+    var porcentagem_Acertos = 0; // Adicionando uma nova variavel para calcular a porcentagem de Acertos e Erros do Usuário - 04/07
+    var porcentagem_Erros = 0; // Adicionando uma nova variavel para calcular a porcentagem de Acertos e Erros do Usuário - 04/07
+
+    function Porcentagem() { //Função que Caucula a porcentagem de acertos e Erros do usuário - 04/07
+            porcentagem_Acertos = Questoes_Certas * 100 / (Questoes_Certas + Questoes_Erradas).toFixed(0);
+            porcentagem_Erros = Questoes_Erradas * 100 / (Questoes_Certas + Questoes_Erradas).toFixed(0);
+
+            
+        }
 
 
     function verificar() {
@@ -237,7 +286,7 @@
 
             if (q1A.checked) {
                 Questoes_Certas++;
-                Sua_Pontuacao += 25;
+                Sua_Pontuacao += 100;
                 Questoes_Erradas--;
             }
             contq++;
@@ -249,7 +298,7 @@
 
             if (q2B.checked) {
                 Questoes_Certas++;
-                Sua_Pontuacao += 50;
+                Sua_Pontuacao += 100;
                 Questoes_Erradas--;
             }
             contq++;
@@ -260,7 +309,7 @@
 
             if (q3D.checked) {
                 Questoes_Certas++;
-                Sua_Pontuacao += 75;
+                Sua_Pontuacao += 100;
                 Questoes_Erradas--;
             }
             contq++;
@@ -282,7 +331,7 @@
 
             if (q5D.checked) {
                 Questoes_Certas++;
-                Sua_Pontuacao += 125;
+                Sua_Pontuacao += 100;
                 Questoes_Erradas--;
             }
             contq++;
@@ -293,7 +342,7 @@
 
             if (q6B.checked) {
                 Questoes_Certas++;
-                Sua_Pontuacao += 150;
+                Sua_Pontuacao += 100;
                 Questoes_Erradas--;
             }
             contq++
@@ -304,35 +353,44 @@
 
             if (q7A.checked) {
                 Questoes_Certas++;
-                Sua_Pontuacao += 175;
+                Sua_Pontuacao += 100;
+                Questoes_Erradas--;
+            }
+            contq++
+            q7.style.display = "none";
+            q8.style.display = "block";
+        }
+        else if (contq == 8) {
+
+            if (q8B.checked) {
+                Questoes_Certas++;
+                Sua_Pontuacao += 100;  
                 Questoes_Erradas--;
             }
             contq++;
-            q7.style.display = "none";
+            q8.style.display = "none";
             GfQuiz.style.display = "block";
             Resultado.style.display = "block";
-            atualizarGraficos();
+            GfQuiz2.style.display = "block";  //Função que faz com que o grafico apareça - 04/07
+            Resultado2.style.display = "block"; //Função que faz com que a Div em que o gráfico esta, apareça - 04/07
+
+            Porcentagem();
+
+            atualizarGrafico1();  // Separei em duas funções diferentes para que não desse problema na hora de executar essas funções - 04/07
+            atualizarGrafico2();
         }
 
-        for(cont = Sua_Pontuacao ; cont <= Pontuacao_Max ; cont++){
+
+
+        for (cont = Sua_Pontuacao; cont <= Pontuacao_Max; cont++) {
             document.getElementById('div_mensagem').innerHTML = `<b>Pontos = ${Sua_Pontuacao}/${Pontuacao_Max}</b>`
             /*É nesse FOR, que o texto presente na Div PONTUACAO será atualizado, mas isso só acontece quando o usuario responde
              a primeira questão do Quiz - Dia - 25/06 */
         }
 
-        if (Questoes_Certas >= 0 || Questoes_Certas <= 3) {
-            div_mensagem.innerHTML = `<span style="font=bold" Você é iniciante ainda.</span>`
-        }
-        if (Questoes_Certas >= 4 || Questoes_Certas <= 6) {
-            var cor = 'yellow';
-            div_mensagem.innerHTML = `<span style="color: ${cor} font=bold"> Caramba, você até que Manja.</span>`
-        }
-        if (Questoes_Certas == 7) {
-            var cor = 'blue';
-            div_mensagem.innerHTML = `<span style="color: ${cor} font=bold"> Slk, Gabaritou o baguio, AMASSOU!!.</span>`
-        }
-
     }
+
+/* ----------- Gráfico de Acertos e Erros -------------- */
 
     const labels = [
         'Acertos',
@@ -356,10 +414,63 @@
         options: {}
     };
 
+/* ----------- Gráfico de Porcentagem -------------- */
+
+    const labels2 = [
+        'Acertos',
+        'Erros',
+    ];
+
+    const data2 = {
+        labels: labels2,
+        datasets: [{
+            label: 'Pontuação',
+            backgroundColor: ['green', 'red'],
+            data: [parseFloat(porcentagem_Acertos), parseFloat(porcentagem_Erros)],
+        }
+        ]
+    };
+
+    const config2 = {
+            type: 'doughnut', //Aqui é o tipo de gráfico usado - 05/07.
+            data: data2, //Aqui temos os dados que serão utlizados, que no caso, são os dados da variavel "data2" - 05/07.
+            options: {
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: function(tooltipItem) { // Essa função aqui, serve para personalizar o Texto da ToolTip, que é justamente o texto que aparece
+                                // quando se coloca o cursor do Mouse em algum dos campos de valores do Gráfico - 05/07.
+
+                                //Este parâmetro é um objeto fornecido pelo Chart.js que contém informações sobre o item atual da tooltip - 05/07.
+                                //Ele é passado automaticamente quando o usuário interage com o gráfico. - 05/07.
+
+                                var dataset = tooltipItem.dataset.data; // Aqui é onde ele irá obter os valores das variaveis
+                                // "[porcentagem_Acertos, porcentagem_Erros]" - 05/07.
+
+                                var total = dataset.reduce((prev, curr) => prev + curr, 0); // Aqui ele calcula a soma total de todos os valores no conjunto de dados, onde
+                                // ele soma todos os valores do array dataset para obter o total geral - 05/07.
+
+                                var currentValue = dataset[tooltipItem.dataIndex]; // É o índice do dado específico no array data
+                                // que corresponde ao segmento do gráfico sobre o qual o usuário passa o mouse - 05/07.
+
+                                var porcentagem = ((currentValue / total) * 100).toFixed(1); // Primeiro ele realiza o calculo da porcentagem
+                                // e depois formata o resultado com uma casa decimal, graças ao ToFixed(1) - 05/07.
+
+                                return porcentagem + "%"; // Retorna a porcentagem calculada como uma string formatada para exibição na tooltip - 05/07.
+                            }
+                        }
+                    }
+                }
+            }
+        };
+
+    // Aqui é inicializado a variável 'myChart' como null. Esta variável armazenará uma instância do gráfico 'Chart'. - 04/07
     let myChart = null;
+    let myChart2 = null; 
 
 
-    function atualizarGraficos() {
+
+    function atualizarGrafico1() {
 
         if (myChart) {
             myChart.destroy();
@@ -372,18 +483,43 @@
 
     }
 
+
+    function atualizarGrafico2(){
+        // Nesse IF, será verificado se já existe valores no gráfico myChart2, se sim ele é apagado, para depois ser atualizado. - 04/07
+        if (myChart2) {
+            myChart2.destroy();  //Está Função serve para destruir os antigos valores que o gráfico Chart.JS tem. - 04/07
+        }
+        data2.datasets[0].data = [parseFloat(porcentagem_Acertos), parseFloat(porcentagem_Erros)];
+        myChart2 = new Chart(
+            document.getElementById('myChart2'),
+            config2
+
+            //E Logo em seguida, é executada esta função, que cria um novo gráfico com os valores reatribuidos, e esses valores são
+            // justamente o que estiver dentro "[]" após o "data2.datasets[0].data = ... " - 04/07
+
+            //Após esses valores serem definidos, ele vê onde eles serão alocados, e é ai que tem que definir qual ID de gráfico Canvas 
+            // vai ser utilizado, que no caso é o gráfico de ID myChart2 (Gráfico de Porcentagem). - 04/07
+        );
+    }
+
     window.onload = function () {
-        atualizarGraficos();
+        Porcentagem();
+        atualizarGrafico1();
+        atualizarGrafico2();
+
     };
+
+
 
 
     function Salvar() {
 
         var certas = Questoes_Certas;
         var erradas = Questoes_Erradas;
+        var pontos = Sua_Pontuacao; //Adionando uma Variável para guardar os pontos do Usuário - 01/07
         var idUsuario = sessionStorage.ID_USUARIO;
 
-        
+
         fetch(`/usuarios/Salvar/${idUsuario}`, {
             method: "POST",
             headers: {
@@ -392,10 +528,11 @@
             body: JSON.stringify({
                 respostasCorretasServer: certas,
                 respostasIncorretasServer: erradas,
+                PontuacaoServer: pontos,  //Agora a Pontuação também vai para o Banco de Dados - 01/07
                 idUsuarioServer: sessionStorage.ID_USUARIO
             }),
         })
-        
+
         Botao.style.display = "none";
     }
 
