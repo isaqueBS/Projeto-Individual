@@ -235,7 +235,9 @@
                 </div>
             </div>
             <div class="Resultado" id="Resultado" style="display: none;">
-                <h2>Aqui esta o Gráfico para mostrar quantas questões você Acertou:</h2>
+                <h2>Você acertou um total de<div id="mensagem_pontos">, </div>:</h2> 
+                <!--Aqui mudei um pouco a mensagem final do Quiz, para que pudesse utilizar os Vetores como complemento na 
+                mensagem - 11/07 -->
                 <div class="mensagem" style="color: tomato;" id="div_mensagem"></div>
                 <div id="GfQuiz" style="width: 370px; height: 200px; display: none;">
                     <canvas id="myChart"></canvas>
@@ -262,6 +264,11 @@
 </html>
 
 <script>
+
+
+    lista_pontos_ganhos = []; //Adicionando vetores - 11/07
+    lista_pontos_perdidos = []; //Adicionando vetores - 11/07
+
     var contq = 1;
     var Questoes_Certas = 0;
     var Questoes_Erradas = 8;
@@ -374,13 +381,31 @@
             GfQuiz2.style.display = "block";  //Função que faz com que o grafico apareça - 04/07
             Resultado2.style.display = "block"; //Função que faz com que a Div em que o gráfico esta, apareça - 04/07
 
+            lista_pontos_ganhos.push(Questoes_Certas);
+            lista_pontos_perdidos.push(Questoes_Erradas); 
+            
+            // Aqui as duas listas de vetores, puxam o resultado final de acertos e erros do Usuario, 
+            // quando ele finaliza o Quiz, e isso ocorre apenas uma vez. - 11/07
+
+
+          
+
             Porcentagem();
 
             atualizarGrafico1();  // Separei em duas funções diferentes para que não desse problema na hora de executar essas funções - 04/07
             atualizarGrafico2();
         }
 
+            Qtd_Total_Acertos = lista_pontos_ganhos[0];
+            Qtd_Total_Erros = lista_pontos_perdidos[0];
+            // Aqui, apenas criei duas novas variaveis para pegar o valor da posição 0 de ambas as listas - 11/07
 
+            mensagem_pontos.innerHTML = `${Qtd_Total_Acertos} questões, e errou ${Qtd_Total_Erros}.
+            A seguir, você pode vizualizar seu desempenho de forma gráfica`
+
+            // Estou usando as listas de Vetores, para exibir uma mensagem diferente no final do Quiz, onde, além dos Gráficos
+            // ele monstra na mensagem quantas questões o usuario acertou e quantas ele errou. - 11/07
+        
 
         for (cont = Sua_Pontuacao; cont <= Pontuacao_Max; cont++) {
             document.getElementById('div_mensagem').innerHTML = `<b>Pontos = ${Sua_Pontuacao}/${Pontuacao_Max}</b>`
@@ -389,6 +414,7 @@
         }
 
     }
+
 
 /* ----------- Gráfico de Acertos e Erros -------------- */
 
