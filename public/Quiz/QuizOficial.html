@@ -583,6 +583,10 @@
 
     function Rank() {
 
+        /*Quando o usuario clica no botão "Exibir Rank do Quiz" essa função faz com que suma os gráficos de
+         desempenho, porcentagem e a Div que mostra os pontos que o usuario fez ao longo do Quiz. Enquanto todas essa funções
+         ficam em oculto, essa mesma função, passa a exibir o gráfico de Rank.*/
+
         GfQuiz.style.display = "none";
         Resultado.style.display = "none";
         GfQuiz2.style.display = "none";
@@ -596,33 +600,38 @@
         Botao3.style.display = "block";
 
 
-        fetch('/usuarios/Rank', {
-    method: 'GET',
+        fetch('/usuarios/Rank', { // Aqui é onde é feita uma requisição HTTP para o destino /usuario/Rank - 19/07
+    method: 'POST',
     headers: {
         'Content-Type': 'application/json'
     },
 })
-    .then(response => response.json())
+    .then(response => response.json()) // Aqui a responta que chegar do servidor, é convertida para o formato JSON - 19/07 
     .then(data => {
-        if (data.length > 0) {
-            var rankHtml = '<ol>';
-            var labels = [];
-            var maxScores = [];
-            var minScores = [];
+        if (data.length > 0) { // Essa validação serve para verificar se existe algum retorno de valor - 19/07
+            var rankHtml = '<ol>'; // Nessa tag, é criada uma string HTML para gerar uma lista ordenada - 19/07
+        //------------------//
+         /*Esses 3 seguintes Arrays, inicializam vazios para armazenar valores expecificos - 19/07*/
+            var labels = []; //Esse irá armazenar os nomes dos usuários - 19/07
+            var maxScores = []; // Aqui será armazenada a Pontuação Máxima de cada usuário - 19/07
+            var minScores = []; // E aqui a pontuação mínima - 19/07
+        //------------------//
             data.forEach(user => {
-                labels.push(user.nome);
-                maxScores.push(user.MaxPontos);
-                minScores.push(user.MinPontos);
+                labels.push(user.nome); // Aqui é onde ele adiciona o nome do usuário ao array "labels"
+                maxScores.push(user.MaxPontos); // Nesse aqui ele adiciona a pontuação máxima do usuário no array "maxScores"
+                minScores.push(user.MinPontos); // E nesse aqui adiciona a pontuação mínima do usuário no array "manScores"
             });
-            rankHtml += '</ol>';
-            document.getElementById('div_mensagem2').innerHTML = rankHtml;
+            rankHtml += '</ol>'; //E é aqui que é fechada a lista ordenada - 19/07
+            document.getElementById('div_mensagem2').innerHTML = rankHtml; 
+            // Aqui ele atribui todo o valor de rankHtml dentro da div_mensagem2 -19/07 
 
-            // Cria o gráfico usando Chart.js
             var ctx = document.getElementById('myChart3').getContext('2d');
+            // Nessa variavel o elemento canvas de Id 'myChart3' recebe o coamndo para ser renderizado em 2D - 19/07
+            
             new Chart(ctx, {
                 type: 'bar',
                 data: {
-                    labels: labels,
+                    labels: labels, // Aqui ele define os rótulos do eixo X usando o array labels. - 19/07
                     datasets: [
                         {
                             label: 'Máximo de Pontos',
@@ -643,22 +652,26 @@
                 options: {
                     scales: {
                         y: {
-                            beginAtZero: true
+                            beginAtZero: true // E aqui e configurado o eixo Y para começar no zero. - 19/07
                         }
                     }
                 }
             });
         } else {
             document.getElementById('div_mensagem2').innerText = 'Nenhum resultado encontrado!';
+            // Se não houver dados retornados, é exibido a mensagem "Nenhum resultado encontrado!". - 19/07
         }
     })
     .catch(error => {
-        console.error('Erro ao buscar o rank:', error);
+        console.error('Erro ao buscar o rank:', error); // Aqui ele apenas registra o erro no console. - 19/07
         document.getElementById('div_mensagem2').innerText = 'Erro ao buscar o rank!';
     });
     }
 
     function Voltar(){
+
+        /* Aqui, ela apenas faz o oposto da primeira parte da função "Rank", onde apenas são invertidos os valores,
+        o que estava em oculto passa a ser exibido, e o que estava sendo exibido, passa a ficar em oculto. */
 
         GfQuiz.style.display = "block";
         Resultado.style.display = "block";
@@ -671,6 +684,8 @@
         Resultado3.style.display = "none";
         GfQuiz3.style.display = "none";
         Botao3.style.display = "none";
+
+
 
     }
 

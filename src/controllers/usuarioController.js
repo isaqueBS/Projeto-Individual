@@ -108,12 +108,16 @@ function Salvar(req, res) {
 
 function Rank(req, res) {
     usuarioModel.Rank()
+    // Aqui, a função `Rank` chama a outra função `Rank` que esta em `usuarioModel` para obter dados do ranking dos usuários. - 19/07
         .then(
-            function (resultado) {
+            function (resultado) { 
                 if (resultado.length > 0) {
                     res.json(resultado);
+                    // Se a consulta SQL retornar dados, a função responde com esses dados em formato JSON. - 19/07
                 } else {
                     res.status(204).send("Nenhum resultado encontrado!");
+
+                    //Caso não houver dados, a função responde com um status 204 e uma mensagem indicando que nenhum resultado foi encontrado. - 19/07
                 }
             }
         ).catch(
@@ -121,6 +125,8 @@ function Rank(req, res) {
                 console.log(erro);
                 console.log("\nHouve um erro ao buscar o rank! Erro: ", erro.sqlMessage);
                 res.status(500).json(erro.sqlMessage);
+                /*E caso houver um erro durante a execução da consulta SQL, a função loga o erro no console e responde
+                 com um status 500 e a mensagem de erro SQL. - 19/07 */
             }
         );
 }

@@ -36,8 +36,10 @@ function Salvar(certas, erradas, pontos, idUsuario) { // Adicionando a função 
 function Rank() {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function Rank()");
     
-    var instrucaoSql = `
-
+    var instrucaoSql = 
+    
+    // Essa é a instrução SQL que estou usando para obter o ranking dos usuários - 19/07
+    `
     SELECT 
         usuario.nome, 
         MAX(Quiz.PontosUsuario) AS MaxPontos, 
@@ -49,6 +51,8 @@ function Rank() {
     LIMIT 5;
 
     `
+    /* Decidi usar o LIMIT 5, para que apareça apenas o 5 melhores jogadores do Quiz dentro do Gráfico, 
+     e tambem para que não ficasse tão cheio o Rank. - 19/07 */
     ;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
