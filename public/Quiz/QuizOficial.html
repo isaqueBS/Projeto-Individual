@@ -23,6 +23,7 @@
                     <li><a>|</a></li>
                     <li class="agora"><a href="QuizOficial.html">Quiz</a></li>
 
+
                 </ul>
             </div>
         </div>
@@ -235,7 +236,8 @@
                 </div>
             </div>
             <div class="Resultado" id="Resultado" style="display: none;">
-                <h2>Você acertou um total de<div id="mensagem_pontos">, </div>:</h2> 
+                <h2>Você acertou um total de<div id="mensagem_pontos">, </div>
+                </h2>
                 <!--Aqui mudei um pouco a mensagem final do Quiz, para que pudesse utilizar os Vetores como complemento na 
                 mensagem - 11/07 -->
                 <div class="mensagem" style="color: tomato;" id="div_mensagem"></div>
@@ -244,7 +246,7 @@
                 </div>
                 <br>
             </div>
-            <!--Adicionando um segundo gráfico na tela de resultados do Quiz - 05/07 --> 
+            <!--Adicionando um segundo gráfico na tela de resultados do Quiz - 05/07 -->
             <div class="Resultado2" id="Resultado2" style="display: none;">
                 <h2>percentual de Quantas questões você acertou:</h2>
                 <div class="mensagem" style="color: tomato;" id="div_mensagem"></div>
@@ -252,7 +254,21 @@
                     <canvas id="myChart2"></canvas>
                 </div>
                 <br>
-                <button style="display: block;" class="btn-nav-white" id="Botao" onclick="Salvar()">Salvar Pontuação</button>
+                <button style="display: block;" class="btn-nav-white" id="Botao" onclick="Salvar()">Salvar
+                    Pontuação</button>
+                <button style="display: block;" class="btn-nav-white" id="Botao2" onclick="Rank()">Exibir Rank do
+                    Quiz</button>
+            </div>
+            <!--Gráfico do Rank-->
+            <div class="Resultado3" id="Resultado3" style="display: none;">
+                <h2>Rank Global do Quiz</h2>
+                <div class="mensagem" style="color: tomato;" id="div_mensagem2"></div>
+                <div id="GfQuiz3" style="width: 370px; height: 200px; display: none;">
+                    <canvas id="myChart3"></canvas>
+                </div>
+                <br>
+                <button style="display: none;" class="btn-nav-white" id="Botao3" onclick="Voltar()">
+                    Voltar a Tela de Resultados</button>
             </div>
 
         </div>
@@ -280,11 +296,11 @@
     var porcentagem_Erros = 0; // Adicionando uma nova variavel para calcular a porcentagem de Acertos e Erros do Usuário - 04/07
 
     function Porcentagem() { //Função que Caucula a porcentagem de acertos e Erros do usuário - 04/07
-            porcentagem_Acertos = Questoes_Certas * 100 / (Questoes_Certas + Questoes_Erradas).toFixed(0);
-            porcentagem_Erros = Questoes_Erradas * 100 / (Questoes_Certas + Questoes_Erradas).toFixed(0);
+        porcentagem_Acertos = Questoes_Certas * 100 / (Questoes_Certas + Questoes_Erradas).toFixed(0);
+        porcentagem_Erros = Questoes_Erradas * 100 / (Questoes_Certas + Questoes_Erradas).toFixed(0);
 
-            
-        }
+
+    }
 
 
     function verificar() {
@@ -371,7 +387,7 @@
 
             if (q8B.checked) {
                 Questoes_Certas++;
-                Sua_Pontuacao += 100;  
+                Sua_Pontuacao += 100;
                 Questoes_Erradas--;
             }
             contq++;
@@ -382,13 +398,13 @@
             Resultado2.style.display = "block"; //Função que faz com que a Div em que o gráfico esta, apareça - 04/07
 
             lista_pontos_ganhos.push(Questoes_Certas);
-            lista_pontos_perdidos.push(Questoes_Erradas); 
-            
+            lista_pontos_perdidos.push(Questoes_Erradas);
+
             // Aqui as duas listas de vetores, puxam o resultado final de acertos e erros do Usuario, 
             // quando ele finaliza o Quiz, e isso ocorre apenas uma vez. - 11/07
 
 
-          
+
 
             Porcentagem();
 
@@ -396,16 +412,16 @@
             atualizarGrafico2();
         }
 
-            Qtd_Total_Acertos = lista_pontos_ganhos[0];
-            Qtd_Total_Erros = lista_pontos_perdidos[0];
-            // Aqui, apenas criei duas novas variaveis para pegar o valor da posição 0 de ambas as listas - 11/07
+        Qtd_Total_Acertos = lista_pontos_ganhos[0];
+        Qtd_Total_Erros = lista_pontos_perdidos[0];
+        // Aqui, apenas criei duas novas variaveis para pegar o valor da posição 0 de ambas as listas - 11/07
 
-            mensagem_pontos.innerHTML = `${Qtd_Total_Acertos} questões, e errou ${Qtd_Total_Erros}.
-            A seguir, você pode vizualizar seu desempenho de forma gráfica`
+        mensagem_pontos.innerHTML = `${Qtd_Total_Acertos} questões, e errou ${Qtd_Total_Erros}.
+            A seguir, você pode vizualizar seu desempenho de forma gráfica:`
 
-            // Estou usando as listas de Vetores, para exibir uma mensagem diferente no final do Quiz, onde, além dos Gráficos
-            // ele monstra na mensagem quantas questões o usuario acertou e quantas ele errou. - 11/07
-        
+        // Estou usando as listas de Vetores, para exibir uma mensagem diferente no final do Quiz, onde, além dos Gráficos
+        // ele monstra na mensagem quantas questões o usuario acertou e quantas ele errou. - 11/07
+
 
         for (cont = Sua_Pontuacao; cont <= Pontuacao_Max; cont++) {
             document.getElementById('div_mensagem').innerHTML = `<b>Pontos = ${Sua_Pontuacao}/${Pontuacao_Max}</b>`
@@ -416,7 +432,7 @@
     }
 
 
-/* ----------- Gráfico de Acertos e Erros -------------- */
+    /* ----------- Gráfico de Acertos e Erros -------------- */
 
     const labels = [
         'Acertos',
@@ -440,7 +456,7 @@
         options: {}
     };
 
-/* ----------- Gráfico de Porcentagem -------------- */
+    /* ----------- Gráfico de Porcentagem -------------- */
 
     const labels2 = [
         'Acertos',
@@ -458,41 +474,43 @@
     };
 
     const config2 = {
-            type: 'doughnut', //Aqui é o tipo de gráfico usado - 05/07.
-            data: data2, //Aqui temos os dados que serão utlizados, que no caso, são os dados da variavel "data2" - 05/07.
-            options: {
-                plugins: {
-                    tooltip: {
-                        callbacks: {
-                            label: function(tooltipItem) { // Essa função aqui, serve para personalizar o Texto da ToolTip, que é justamente o texto que aparece
-                                // quando se coloca o cursor do Mouse em algum dos campos de valores do Gráfico - 05/07.
+        type: 'doughnut', //Aqui é o tipo de gráfico usado - 05/07.
+        data: data2, //Aqui temos os dados que serão utlizados, que no caso, são os dados da variavel "data2" - 05/07.
+        options: {
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        label: function (tooltipItem) { // Essa função aqui, serve para personalizar o Texto da ToolTip, que é justamente o texto que aparece
+                            // quando se coloca o cursor do Mouse em algum dos campos de valores do Gráfico - 05/07.
 
-                                //Este parâmetro é um objeto fornecido pelo Chart.js que contém informações sobre o item atual da tooltip - 05/07.
-                                //Ele é passado automaticamente quando o usuário interage com o gráfico. - 05/07.
+                            //Este parâmetro é um objeto fornecido pelo Chart.js que contém informações sobre o item atual da tooltip - 05/07.
+                            //Ele é passado automaticamente quando o usuário interage com o gráfico. - 05/07.
 
-                                var dataset = tooltipItem.dataset.data; // Aqui é onde ele irá obter os valores das variaveis
-                                // "[porcentagem_Acertos, porcentagem_Erros]" - 05/07.
+                            var dataset = tooltipItem.dataset.data; // Aqui é onde ele irá obter os valores das variaveis
+                            // "[porcentagem_Acertos, porcentagem_Erros]" - 05/07.
 
-                                var total = dataset.reduce((prev, curr) => prev + curr, 0); // Aqui ele calcula a soma total de todos os valores no conjunto de dados, onde
-                                // ele soma todos os valores do array dataset para obter o total geral - 05/07.
+                            var total = dataset.reduce((prev, curr) => prev + curr, 0); // Aqui ele calcula a soma total de todos os valores no conjunto de dados, onde
+                            // ele soma todos os valores do array dataset para obter o total geral - 05/07.
 
-                                var currentValue = dataset[tooltipItem.dataIndex]; // É o índice do dado específico no array data
-                                // que corresponde ao segmento do gráfico sobre o qual o usuário passa o mouse - 05/07.
+                            var currentValue = dataset[tooltipItem.dataIndex]; // É o índice do dado específico no array data
+                            // que corresponde ao segmento do gráfico sobre o qual o usuário passa o mouse - 05/07.
 
-                                var porcentagem = ((currentValue / total) * 100).toFixed(1); // Primeiro ele realiza o calculo da porcentagem
-                                // e depois formata o resultado com uma casa decimal, graças ao ToFixed(1) - 05/07.
+                            var porcentagem = ((currentValue / total) * 100).toFixed(1); // Primeiro ele realiza o calculo da porcentagem
+                            // e depois formata o resultado com uma casa decimal, graças ao ToFixed(1) - 05/07.
 
-                                return porcentagem + "%"; // Retorna a porcentagem calculada como uma string formatada para exibição na tooltip - 05/07.
-                            }
+                            return porcentagem + "%"; // Retorna a porcentagem calculada como uma string formatada para exibição na tooltip - 05/07.
                         }
                     }
                 }
             }
-        };
+        }
+    };
+
+    // ------------------------------------------------------------------- //
 
     // Aqui é inicializado a variável 'myChart' como null. Esta variável armazenará uma instância do gráfico 'Chart'. - 04/07
     let myChart = null;
-    let myChart2 = null; 
+    let myChart2 = null;
 
 
 
@@ -510,7 +528,7 @@
     }
 
 
-    function atualizarGrafico2(){
+    function atualizarGrafico2() {
         // Nesse IF, será verificado se já existe valores no gráfico myChart2, se sim ele é apagado, para depois ser atualizado. - 04/07
         if (myChart2) {
             myChart2.destroy();  //Está Função serve para destruir os antigos valores que o gráfico Chart.JS tem. - 04/07
@@ -560,6 +578,100 @@
         })
 
         Botao.style.display = "none";
+    }
+
+
+    function Rank() {
+
+        GfQuiz.style.display = "none";
+        Resultado.style.display = "none";
+        GfQuiz2.style.display = "none";
+        Resultado2.style.display = "none";
+        Pontuacao.style.display = "none";
+
+        //-------------------------------//
+
+        Resultado3.style.display = "block";
+        GfQuiz3.style.display = "block";
+        Botao3.style.display = "block";
+
+
+        fetch('/usuarios/Rank', {
+    method: 'GET',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+})
+    .then(response => response.json())
+    .then(data => {
+        if (data.length > 0) {
+            var rankHtml = '<ol>';
+            var labels = [];
+            var maxScores = [];
+            var minScores = [];
+            data.forEach(user => {
+                labels.push(user.nome);
+                maxScores.push(user.MaxPontos);
+                minScores.push(user.MinPontos);
+            });
+            rankHtml += '</ol>';
+            document.getElementById('div_mensagem2').innerHTML = rankHtml;
+
+            // Cria o gráfico usando Chart.js
+            var ctx = document.getElementById('myChart3').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: 'Máximo de Pontos',
+                            data: maxScores,
+                            backgroundColor: 'tomato',
+                            borderColor: 'tomato',
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'Mínimo de Pontos',
+                            data: minScores,
+                            backgroundColor: 'lightblue',
+                            borderColor: 'lightblue',
+                            borderWidth: 1
+                        }
+                    ]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        } else {
+            document.getElementById('div_mensagem2').innerText = 'Nenhum resultado encontrado!';
+        }
+    })
+    .catch(error => {
+        console.error('Erro ao buscar o rank:', error);
+        document.getElementById('div_mensagem2').innerText = 'Erro ao buscar o rank!';
+    });
+    }
+
+    function Voltar(){
+
+        GfQuiz.style.display = "block";
+        Resultado.style.display = "block";
+        GfQuiz2.style.display = "block";
+        Resultado2.style.display = "block";
+        Pontuacao.style.display = "block";
+
+        //-------------------------------//
+
+        Resultado3.style.display = "none";
+        GfQuiz3.style.display = "none";
+        Botao3.style.display = "none";
+
     }
 
 </script>

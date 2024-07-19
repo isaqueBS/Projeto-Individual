@@ -16,4 +16,8 @@ router.post("/Salvar/:idUsuario", function (req, res) {
     usuarioController.Salvar(req, res);
 });
 
+router.get("/Rank", function (req, res) {
+    usuarioController.Rank(req, res);
+});
+
 module.exports = router;

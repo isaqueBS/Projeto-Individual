@@ -28,7 +28,28 @@ function Salvar(certas, erradas, pontos, idUsuario) { // Adicionando a função 
 
     var instrucaoSql =`
         INSERT INTO Quiz (Certas, Erradas, PontosUsuario, fkUsuario) VALUES ('${certas}', '${erradas}', '${pontos}',  '${idUsuario}'); 
-    `; //Adicionando a Variável 'Pontos', para que agora eles também sejam inseridos dentro do Banco de Dados
+        `; //Adicionando a Variável 'Pontos', para que agora eles também sejam inseridos dentro do Banco de Dados
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+function Rank() {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function Rank()");
+    
+    var instrucaoSql = `
+
+    SELECT 
+        usuario.nome, 
+        MAX(Quiz.PontosUsuario) AS MaxPontos, 
+        MIN(Quiz.PontosUsuario) AS MinPontos
+    FROM usuario
+    JOIN Quiz ON usuario.idUsuario = Quiz.fkUsuario
+    GROUP BY usuario.nome
+    ORDER BY MaxPontos DESC
+    LIMIT 5;
+
+    `
+    ;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
@@ -37,5 +58,6 @@ function Salvar(certas, erradas, pontos, idUsuario) { // Adicionando a função 
 module.exports = {
     autenticar,
     cadastrar,
-    Salvar
+    Salvar,
+    Rank
 };
