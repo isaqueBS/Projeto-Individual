@@ -136,7 +136,7 @@ body::-webkit-scrollbar {
 }
 
 #itens-laterais .listaItens .botão-lateral {
-  margin-top: 5%;
+  margin-top: 3%; /*Apenas precisei ajustar um pouco a distância entre os textos presentes no Hamburguer lateral*/
   display: flex;
   align-items: center;
   font-weight: bold;

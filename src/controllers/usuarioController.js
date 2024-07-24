@@ -107,6 +107,7 @@ function Salvar(req, res) {
 }
 
 function Rank(req, res) {
+
     usuarioModel.Rank()
     // Aqui, a função `Rank` chama a outra função `Rank` que esta em `usuarioModel` para obter dados do ranking dos usuários. - 19/07
         .then(
