@@ -254,10 +254,12 @@
                     <canvas id="myChart2"></canvas>
                 </div>
                 <br>
-                <button style="display: block;" class="btn-nav-white" id="Botao" onclick="Salvar()">Salvar
-                    Pontuação</button>
-                <button style="display: block;" class="btn-nav-white" id="Botao2" onclick="Rank()">Exibir Rank do
-                    Quiz</button>
+                <div class="div_botao_quiz">
+                    <button style="display: block;" class="btn-nav-white" id="Botao" onclick="Salvar()">Salvar
+                        Pontuação</button>
+                    <button style="display: block;" class="btn-nav-white" id="Botao2" onclick="Rank()">Exibir Rank do
+                        Quiz</button>
+                </div>
             </div>
             <!--Gráfico do Rank-->
             <div class="Resultado3" id="Resultado3" style="display: none;">
@@ -664,7 +666,6 @@
     })
     .catch(error => {
         console.error('Erro ao buscar o rank:', error); // Aqui ele apenas registra o erro no console. - 19/07
-        document.getElementById('div_mensagem2').innerText = 'Erro ao buscar o rank!';
     });
     }
 
