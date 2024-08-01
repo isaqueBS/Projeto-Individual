@@ -255,10 +255,12 @@
                 </div>
                 <br>
                 <div class="div_botao_quiz">
-                    <button style="display: block;" class="btn-nav-white" id="Botao" onclick="Salvar()">Salvar
-                        Pontuação</button>
-                    <button style="display: block;" class="btn-nav-white" id="Botao2" onclick="Rank()">Exibir Rank do
-                        Quiz</button>
+                    <button style="display: block;" class="btn-nav-white" id="Botao" onclick="Salvar()">Salvar Pontuação</button>
+
+                    <button style="display: block;" class="btn-nav-white" id="Botao2" onclick="Rank()">Exibir Rank</button>
+
+                    <button style="display: block;" class="btn-nav-white" id="Botao4" onclick="Refazer()">Refazer Quiz</button>
+                    <!--Aqui adicionei um novo Botão para o usuario Refazer o Quiz caso ele queira - 01/08 -->
                 </div>
             </div>
             <!--Gráfico do Rank-->
@@ -269,8 +271,9 @@
                     <canvas id="myChart3"></canvas>
                 </div>
                 <br>
-                <button style="display: none;" class="btn-nav-white" id="Botao3" onclick="Voltar()">
-                    Voltar a Tela de Resultados</button>
+                <button style="display: none;" class="btn-nav-white-2" id="Botao3" onclick="Voltar()">Voltar</button>
+                <!--Aqui mudei o Texto do botão, e também decidi criar uma nova classe para ele, só pra facilitar
+                a padronização dos botões - 01/08 -->
             </div>
 
         </div>
@@ -686,8 +689,14 @@
         GfQuiz3.style.display = "none";
         Botao3.style.display = "none";
 
-
-
     }
+
+    function Refazer(){
+
+        location.reload();
+        // Aqui apenas um botão a mais no final do Quiz pra caso o usuario queira joga-lo novamente. - 01/08
+    }
+
+
 
 </script>

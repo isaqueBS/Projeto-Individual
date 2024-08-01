@@ -136,10 +136,15 @@ color: tomato;
   margin-right: 10px;
 }
 
+/*Configuração do Botões que aparecem no dinal do Quiz - 01/08*/
+
 .btn-nav-white {
   text-decoration: solid;
   font-size: large;
-  width: 20%;
+  margin: 5px;
+  width: 20%;  
+  /*Decidi padronizar alguns detalhes vizuais nos botões, já que alguns estavem maiores que os outros - 01/08*/
+  height: 20%;
   font: bold; 
   color: bisque;
   background-color: tomato;
@@ -147,6 +152,24 @@ color: tomato;
   border-radius: 30px;
   text-align: center;
 }
+
+/*Configuração do Botão "Voltar" que aparece na tela no Rank - 01/08*/
+
+.btn-nav-white-2 {
+  text-decoration: solid;
+  font-size: large;
+  margin: 5px;
+  width: 100px;
+  height: 50px;
+  font: bold; 
+  color: bisque;
+  background-color: tomato;
+  border: 3px solid tomato;
+  border-radius: 30px;
+  text-align: center;
+  /*Preferi editar esse botão separadamente para que ficasse padronizado assim como os outros - 01/08*/
+}
+
 
 .Pontuacao{
   width: 200px;
@@ -167,6 +190,18 @@ color: tomato;
   top: +100px;
   color: tomato;
 
+}
+
+/* Div para os Botões que aparecem no Quiz - 01/08*/
+
+.div_botao_quiz{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+
+  /*Coloquei essa Div apenas para ajusatar a posição e a direção do botões no final do Quiz, já que estavam muito colados
+  e desalinhados - 01/08 */
 }
 
 .div_mensagem{
